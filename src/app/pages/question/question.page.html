@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Vraag</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="question">
+    <h2>{{question.text}}</h2>
+
+    <div class="to-bottom">
+      <div *ngIf="question.type === 'multiple-choice'" padding>
+        <ion-button
+          fill="{{answer.id === selectedAnswer ? 'solid' : 'outline'}}"
+          color="{{selectedAnswer !== -1 ? (answer.id === question.correctAnswerIndex ? 'success' : 'danger') : 'primary'}}"
+          expand="block"
+          *ngFor="let answer of question.answers" (click)="selectAnswer(answer.id)"
+        >
+          {{answer.text}}
+        </ion-button>
+      </div>
+      <div padding>
+        <ion-button
+          color="{{selectedAnswer === -1 ? 'light' : 'primary'}}"
+          expand="block"
+          disabled="{{selectedAnswer === -1}}"
+          (click)="nextQuestion()"
+        >
+          Volgende vraag
+        </ion-button>
+      </div>
+      <h3 padding>
+        Punten: {{spacedRepetitionService.numCorrectAnswersGiven.getValue()}}
+        <span float-end>
+        {{spacedRepetitionService.numRevisionsInCurrentSession.getValue()}} / {{maxRevisions}}
+        </span>
+      </h3>
+      <ion-progress-bar value="{{spacedRepetitionService.numRevisionsInCurrentSession.getValue() / maxRevisions}}">
+      </ion-progress-bar>
+    </div>
+  </div>
+
+  <div *ngIf="endScreen" text-center>
+    <h1>Klaar! 😄</h1>
+    <h2>Je hebt {{spacedRepetitionService.numCorrectAnswersGiven.getValue()}} punten behaald</h2>
+    <ion-button [routerLink]="'/home'">
+      Terug naar het overzicht
+    </ion-button>
+  </div>
+</ion-content>
