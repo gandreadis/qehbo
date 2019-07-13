@@ -23,11 +23,11 @@
     - sth.else
   correctAnswerIndex: 1
 
-#- id: 2
-#  type: order
-#  category: procedure
-#  text: What's the correct order?
-#  answers:
-#    - 1. first
-#    - 2. second
-#    - 3. third
+- id: 3
+  type: order
+  category: procedure
+  text: What's the correct order?
+  answers:
+    - 1. first
+    - 2. second
+    - 3. third

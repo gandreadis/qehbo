@@ -92,17 +92,17 @@ export class SpacedRepetitionService {
     });
   }
 
-  processMultipleChoiceQuestionAnswered(id: number, givenAnswerIndex): Promise<void> {
+  processMultipleChoiceQuestionAnswered(id: number, givenAnswerIndex): Promise<boolean> {
     const question = this.databaseService.getCurrentQuestions().find(q => q.id === id);
     return this.processQuestionAnswered(question, givenAnswerIndex === question.correctAnswerIndex);
   }
 
-  processOrderQuestionAnswered(id: number, indexOrder): Promise<void> {
+  processOrderQuestionAnswered(id: number, indexOrder): Promise<boolean> {
     const question = this.databaseService.getCurrentQuestions().find(q => q.id === id);
     return this.processQuestionAnswered(question, SpacedRepetitionService.isSorted(indexOrder));
   }
 
-  private processQuestionAnswered(question: Question, correctly: boolean): Promise<void> {
+  private processQuestionAnswered(question: Question, correctly: boolean): Promise<boolean> {
     this.numRevisionsInCurrentSession.next(this.numRevisionsInCurrentSession.getValue() + 1);
 
     question.lastVisitDateTime = moment().toISOString();
@@ -118,6 +118,6 @@ export class SpacedRepetitionService {
       question.box = 0;
     }
 
-    return this.databaseService.updateQuestion(question);
+    return this.databaseService.updateQuestion(question).then(() => correctly);
   }
 }

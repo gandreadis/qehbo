@@ -13,6 +13,8 @@ export class QuestionPage implements OnInit {
   selectedAnswer = -1;
   maxRevisions = MAX_REVISIONS_PER_SESSION;
   endScreen = false;
+  submitted = false;
+  answerCorrect = false;
 
   constructor(public databaseService: DatabaseService, public spacedRepetitionService: SpacedRepetitionService) {}
 
@@ -26,12 +28,22 @@ export class QuestionPage implements OnInit {
   }
 
   async selectAnswer(index) {
-    await this.spacedRepetitionService.processMultipleChoiceQuestionAnswered(this.question.id, index);
+    this.answerCorrect = await this.spacedRepetitionService.processMultipleChoiceQuestionAnswered(this.question.id, index);
     this.selectedAnswer = index;
+    this.submitted = true;
+  }
+
+  async submitOrder() {
+    this.answerCorrect = await this.spacedRepetitionService.processOrderQuestionAnswered(
+      this.question.id,
+      this.question.answers.map(a => a.id),
+    );
+    this.submitted = true;
   }
 
   nextQuestion() {
     this.selectedAnswer = -1;
+    this.submitted = false;
     this.question = this.spacedRepetitionService.getNextRevisionQuestion();
     if (this.question === null) {
       this.endScreen = true;

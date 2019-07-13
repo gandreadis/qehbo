@@ -1,5 +1,7 @@
 {
   "name": "qehbo",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

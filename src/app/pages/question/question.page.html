@@ -17,16 +17,57 @@
           fill="{{answer.id === selectedAnswer ? 'solid' : 'outline'}}"
           color="{{selectedAnswer !== -1 ? (answer.id === question.correctAnswerIndex ? 'success' : 'danger') : 'primary'}}"
           expand="block"
-          *ngFor="let answer of question.answers" (click)="selectAnswer(answer.id)"
+          *ngFor="let answer of question.answers"
+          (click)="selectAnswer(answer.id)"
         >
           {{answer.text}}
         </ion-button>
       </div>
+
+
+      <div *ngIf="question.type === 'order'" padding>
+        <ion-list dragula="ANSWERS" [(dragulaModel)]="question.answers">
+          <ion-button
+            fill="outline"
+            color="primary"
+            expand="block"
+            *ngFor="let answer of question.answers"
+          >
+            {{ answer.text }}
+          </ion-button>
+        </ion-list>
+
+        <ion-button
+          color="{{submitted ? 'light' : 'primary'}}"
+          expand="block"
+          disabled="{{submitted}}"
+          (click)="submitOrder()"
+        >
+          Volgorde checken
+        </ion-button>
+      </div>
+
+      <div text-center>
+        <ion-chip
+          color="{{answerCorrect ? 'success' : 'danger'}}"
+          [style.visibility]="submitted ? 'visible' : 'hidden'"
+        >
+          <span *ngIf="answerCorrect">
+            <ion-icon name="checkmark-circle"></ion-icon>
+            Goed zo!
+          </span>
+          <span *ngIf="!answerCorrect">
+            <ion-icon name="close-circle"></ion-icon>
+            Jammer, volgende keer beter!
+          </span>
+        </ion-chip>
+      </div>
+
       <div padding>
         <ion-button
-          color="{{selectedAnswer === -1 ? 'light' : 'primary'}}"
+          color="{{!submitted ? 'light' : 'primary'}}"
           expand="block"
-          disabled="{{selectedAnswer === -1}}"
+          disabled="{{!submitted}}"
           (click)="nextQuestion()"
         >
           Volgende vraag
