@@ -12,7 +12,14 @@
 <ion-content padding>
   <div>TODO: Disclaimer</div>
 
-  <ion-button expand="block" [routerLink]="'/question'">
-    Oefen
-  </ion-button>
+  <ion-card *ngFor="let category of categories">
+    <ion-card-header>
+      <ion-card-title>{{category.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" [routerLink]="['/question/', category.id]">
+        Oefenen
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

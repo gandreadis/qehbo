@@ -6,6 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  categories = [
+    {
+      id: 'procedure',
+      title: 'Volgorde van Eerste Hulp',
+    },
+    {
+      id: 'reanimatie',
+      title: 'Reanimatie',
+    },
+  ];
 
   constructor() {}
 

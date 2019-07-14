@@ -10,8 +10,17 @@
   preserveAnswerOrder: true
 
 - id: 2
-  type: multiple-choice
+  type: order
   category: procedure
+  text: What's the correct order?
+  answers:
+    - 1. first
+    - 2. second
+    - 3. third
+
+- id: 3
+  type: multiple-choice
+  category: reanimatie
   text: 1 + 1 = 3
   answers:
     - True
@@ -22,12 +31,3 @@
     - sth.else
     - sth.else
   correctAnswerIndex: 1
-
-- id: 3
-  type: order
-  category: procedure
-  text: What's the correct order?
-  answers:
-    - 1. first
-    - 2. second
-    - 3. third

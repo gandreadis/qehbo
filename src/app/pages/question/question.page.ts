@@ -4,6 +4,7 @@ import {SpacedRepetitionService} from '../../services/spaced-repetition.service'
 import {MAX_REVISIONS_PER_SESSION} from '../../services/spaced-repetition.service';
 import {SharedModule} from '../../shared/shared.module';
 import {DragulaService} from 'ng2-dragula';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-question',
@@ -13,30 +14,35 @@ import {DragulaService} from 'ng2-dragula';
 export class QuestionPage implements OnInit {
   question: Question = null;
   selectedAnswer = -1;
+  previousQuestionId = -1;
   maxRevisions = MAX_REVISIONS_PER_SESSION;
   endScreen = false;
   submitted = false;
   answerCorrect = false;
   score = 0;
+  category = null;
 
   constructor(
     public databaseService: DatabaseService,
     public spacedRepetitionService: SpacedRepetitionService,
-    public dragulaService: DragulaService
+    private dragulaService: DragulaService,
+    private route: ActivatedRoute,
   ) {
     dragulaService.destroy('ANSWERS');
     dragulaService.createGroup('ANSWERS', {
       moves: () => !this.submitted
     });
-
     databaseService.getScoreAsObservable().subscribe(newScore => this.score = newScore);
   }
 
   ngOnInit() {
     this.databaseService.isReady.subscribe(ready => {
       if (ready) {
-        this.spacedRepetitionService.resetSession();
-        this.nextQuestion();
+        this.route.paramMap.subscribe(params => {
+          this.category = params.get('id');
+          this.spacedRepetitionService.resetSession();
+          this.nextQuestion();
+        });
       }
     });
   }
@@ -62,9 +68,11 @@ export class QuestionPage implements OnInit {
   nextQuestion() {
     this.selectedAnswer = -1;
     this.submitted = false;
-    this.question = this.spacedRepetitionService.getNextRevisionQuestion();
+    this.question = this.spacedRepetitionService.getNextQuestionDueToday(this.category, this.previousQuestionId);
     if (this.question === null) {
       this.endScreen = true;
+    } else {
+      this.previousQuestionId = this.question.id;
     }
   }
 }

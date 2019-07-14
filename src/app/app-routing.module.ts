@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: './pages/about/about.module#AboutPageModule'
   },
   {
-    path: 'question',
+    path: 'question/:id',
     loadChildren: './pages/question/question.module#QuestionPageModule'
   }
 ];

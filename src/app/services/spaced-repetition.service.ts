@@ -31,20 +31,27 @@ export class SpacedRepetitionService {
     this.numRevisionsInCurrentSession.next(0);
   }
 
-  getNextRevisionQuestion(): Question {
-    const filteredQuestions = this.getAllQuestionsDueToday();
+  getNextQuestionDueToday(category: string, lastQuestionId: number): Question {
+    const filteredQuestions = this.getAllQuestionsDueToday(category);
 
     if (filteredQuestions.length === 0 || this.numRevisionsInCurrentSession.getValue() + 1 === MAX_REVISIONS_PER_SESSION) {
       this.numRevisionsInCurrentSession.next(MAX_REVISIONS_PER_SESSION);
       return null;
     } else {
-      const chosenQuestion = {...SharedModule.chooseOneAtRandom(filteredQuestions)};
-      return SharedModule.shuffleAnswersOfQuestion(chosenQuestion);
+      SharedModule.shuffleArray(filteredQuestions);
+      if (filteredQuestions[0].id === lastQuestionId) {
+        filteredQuestions.reverse();
+      }
+      return SharedModule.shuffleAnswersOfQuestion({...filteredQuestions[0]});
     }
   }
 
-  getAllQuestionsDueToday(): Question[] {
+  getAllQuestionsDueToday(category: string): Question[] {
     return this.databaseService.getCurrentQuestions().filter(question => {
+      if (question.category !== category) {
+        return false;
+      }
+
       if (!question.box) {
         return true;
       } else {
