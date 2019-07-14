@@ -3,19 +3,30 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Vraag</ion-title>
+    <ion-title>Oefenen</ion-title>
+    <ion-buttons slot="end" padding-end>
+      <ion-chip margin-end>
+        {{score}}
+      </ion-chip>
+      <ion-label>punten</ion-label>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <div *ngIf="question">
+    <ion-progress-bar
+      style="position: absolute; left: 0; right: 0; top: 0;"
+      value="{{spacedRepetitionService.numRevisionsInCurrentSession.getValue() / maxRevisions}}" float-start>
+    </ion-progress-bar>
+
     <h2>{{question.text}}</h2>
 
     <div class="to-bottom">
       <div *ngIf="question.type === 'multiple-choice'" padding>
         <ion-button
           fill="{{answer.id === selectedAnswer ? 'solid' : 'outline'}}"
-          color="{{selectedAnswer !== -1 ? (answer.id === question.correctAnswerIndex ? 'success' : 'danger') : 'primary'}}"
+          color="{{submitted ? (answer.id === question.correctAnswerIndex ? 'success' : (answer.id !== selectedAnswer ? 'medium' : 'danger')) : 'primary'}}"
           expand="block"
           *ngFor="let answer of question.answers"
           (click)="selectAnswer(answer.id)"
@@ -28,8 +39,8 @@
       <div *ngIf="question.type === 'order'" padding>
         <ion-list dragula="ANSWERS" [(dragulaModel)]="question.answers">
           <ion-button
-            fill="outline"
-            color="primary"
+            fill="{{submitted ? 'solid' : 'outline'}}"
+            color="{{submitted ? 'medium' : 'primary'}}"
             expand="block"
             *ngFor="let answer of question.answers"
           >
@@ -73,20 +84,11 @@
           Volgende vraag
         </ion-button>
       </div>
-      <h3 padding>
-        Punten: {{spacedRepetitionService.numCorrectAnswersGiven.getValue()}}
-        <span float-end>
-        {{spacedRepetitionService.numRevisionsInCurrentSession.getValue()}} / {{maxRevisions}}
-        </span>
-      </h3>
-      <ion-progress-bar value="{{spacedRepetitionService.numRevisionsInCurrentSession.getValue() / maxRevisions}}">
-      </ion-progress-bar>
     </div>
   </div>
 
   <div *ngIf="endScreen" text-center>
     <h1>Klaar! 😄</h1>
-    <h2>Je hebt {{spacedRepetitionService.numCorrectAnswersGiven.getValue()}} punten behaald</h2>
     <ion-button [routerLink]="'/home'">
       Terug naar het overzicht
     </ion-button>

@@ -28,6 +28,7 @@ export class DatabaseService {
   public isReady = new BehaviorSubject(false);
 
   private questions = new BehaviorSubject([]);
+  private score = new BehaviorSubject(0);
 
   constructor(private storage: Storage, private http: HttpClient) {
     this.storage.ready().then(async () => {
@@ -37,12 +38,19 @@ export class DatabaseService {
 
   async initializeDatabase() {
     const storedQuestions = await this.storage.get('questions');
+    const storedScore = await this.storage.get('score');
 
     if (storedQuestions === null) {
       this.isReady.next(false);
       this.resetDatabase();
     } else {
-      await this.updateQuestions(storedQuestions);
+      this.questions.next(storedQuestions);
+
+      if (storedScore === null) {
+        await this.updateScore(0);
+      } else {
+        this.score.next(storedScore);
+      }
       this.isReady.next(true);
     }
   }
@@ -57,6 +65,7 @@ export class DatabaseService {
       });
 
       await this.updateQuestions(parsedQuestions);
+      await this.updateScore(0);
       this.isReady.next(true);
     });
   }
@@ -65,8 +74,8 @@ export class DatabaseService {
     return this.questions.getValue();
   }
 
-  getQuestionsObservable(): Observable<Question[]> {
-    return this.questions.asObservable();
+  getScoreAsObservable(): Observable<number> {
+    return this.score.asObservable();
   }
 
   updateQuestions(questions): Promise<void> {
@@ -79,5 +88,15 @@ export class DatabaseService {
     const otherQuestions = this.questions.getValue().filter(q => q.id !== question.id);
     const allQuestions = [question, ...otherQuestions];
     return this.updateQuestions(allQuestions);
+  }
+
+  updateScore(score): Promise<void> {
+    return this.storage.set('score', score).then(() => {
+      this.score.next(score);
+    });
+  }
+
+  addToScore(diff): Promise<void> {
+    return this.updateScore(this.score.getValue() + diff);
   }
 }

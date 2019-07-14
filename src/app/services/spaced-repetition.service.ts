@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {DatabaseService, Question} from './database.service';
 import * as moment from 'moment';
 import {BehaviorSubject} from 'rxjs';
+import {SharedModule} from '../shared/shared.module';
 
 const boxToDayDelta = {
   0: 0,
@@ -15,58 +16,19 @@ const boxToDayDelta = {
 };
 const MAX_BOX = 7;
 export const MAX_REVISIONS_PER_SESSION = 10;
+const POINT_MULTIPLIER = 10;
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpacedRepetitionService {
   public numRevisionsInCurrentSession = new BehaviorSubject(0);
-  public numCorrectAnswersGiven = new BehaviorSubject(0);
 
   constructor(private databaseService: DatabaseService) {
   }
 
-  static chooseOneAtRandom(array) {
-    return array[Math.floor(Math.random() * array.length)];
-  }
-
-  static shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
-
-  static arraysEqual(array1, array2) {
-    return JSON.stringify(array1) === JSON.stringify(array2);
-  }
-
-  static shuffleAnswersOfQuestion(question: Question): Question {
-    if (!question.preserveAnswerOrder) {
-      const copiedAnswers = [...question.answers];
-      SpacedRepetitionService.shuffleArray(copiedAnswers);
-
-      if (question.type === 'order' && SpacedRepetitionService.arraysEqual(copiedAnswers, question.answers)) {
-        copiedAnswers.reverse();
-      }
-
-      question.answers = copiedAnswers;
-    }
-    return question;
-  }
-
-  static isSorted(array) {
-    for (let i = 0; i < array.length - 1; i++) {
-      if (array[i] > array[i + 1]) {
-        return false;
-      }
-    }
-    return true;
-  }
-
   resetSession() {
     this.numRevisionsInCurrentSession.next(0);
-    this.numCorrectAnswersGiven.next(0);
   }
 
   getNextRevisionQuestion(): Question {
@@ -76,8 +38,8 @@ export class SpacedRepetitionService {
       this.numRevisionsInCurrentSession.next(MAX_REVISIONS_PER_SESSION);
       return null;
     } else {
-      const chosenQuestion = {...SpacedRepetitionService.chooseOneAtRandom(filteredQuestions)};
-      return SpacedRepetitionService.shuffleAnswersOfQuestion(chosenQuestion);
+      const chosenQuestion = {...SharedModule.chooseOneAtRandom(filteredQuestions)};
+      return SharedModule.shuffleAnswersOfQuestion(chosenQuestion);
     }
   }
 
@@ -99,7 +61,7 @@ export class SpacedRepetitionService {
 
   processOrderQuestionAnswered(id: number, indexOrder): Promise<boolean> {
     const question = this.databaseService.getCurrentQuestions().find(q => q.id === id);
-    return this.processQuestionAnswered(question, SpacedRepetitionService.isSorted(indexOrder));
+    return this.processQuestionAnswered(question, SharedModule.isSorted(indexOrder));
   }
 
   private processQuestionAnswered(question: Question, correctly: boolean): Promise<boolean> {
@@ -112,8 +74,8 @@ export class SpacedRepetitionService {
         question.box = 1;
       }
 
+      this.databaseService.addToScore(question.box * POINT_MULTIPLIER);
       question.box += question.box === MAX_BOX ? 0 : 1;
-      this.numCorrectAnswersGiven.next(this.numCorrectAnswersGiven.getValue() + 1);
     } else {
       question.box = 0;
     }

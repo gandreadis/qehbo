@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {DatabaseService, Question} from '../../services/database.service';
 import {SpacedRepetitionService} from '../../services/spaced-repetition.service';
 import {MAX_REVISIONS_PER_SESSION} from '../../services/spaced-repetition.service';
+import {SharedModule} from '../../shared/shared.module';
+import {DragulaService} from 'ng2-dragula';
 
 @Component({
   selector: 'app-question',
@@ -15,8 +17,20 @@ export class QuestionPage implements OnInit {
   endScreen = false;
   submitted = false;
   answerCorrect = false;
+  score = 0;
 
-  constructor(public databaseService: DatabaseService, public spacedRepetitionService: SpacedRepetitionService) {}
+  constructor(
+    public databaseService: DatabaseService,
+    public spacedRepetitionService: SpacedRepetitionService,
+    public dragulaService: DragulaService
+  ) {
+    dragulaService.destroy('ANSWERS');
+    dragulaService.createGroup('ANSWERS', {
+      moves: () => !this.submitted
+    });
+
+    databaseService.getScoreAsObservable().subscribe(newScore => this.score = newScore);
+  }
 
   ngOnInit() {
     this.databaseService.isReady.subscribe(ready => {
@@ -28,6 +42,9 @@ export class QuestionPage implements OnInit {
   }
 
   async selectAnswer(index) {
+    if (this.selectedAnswer !== -1) {
+      return;
+    }
     this.answerCorrect = await this.spacedRepetitionService.processMultipleChoiceQuestionAnswered(this.question.id, index);
     this.selectedAnswer = index;
     this.submitted = true;
@@ -39,6 +56,7 @@ export class QuestionPage implements OnInit {
       this.question.answers.map(a => a.id),
     );
     this.submitted = true;
+    SharedModule.sortById(this.question.answers);
   }
 
   nextQuestion() {
