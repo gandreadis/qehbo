@@ -27,6 +27,7 @@
     "@ionic/angular": "^4.1.0",
     "@ionic/storage": "^2.2.0",
     "cordova-android": "8.0.0",
+    "cordova-plugin-android-notch": "^1.0.3",
     "core-js": "^2.5.4",
     "moment": "^2.24.0",
     "ng2-dragula": "^2.1.1",
@@ -76,7 +77,8 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-android-notch": {}
     },
     "platforms": [
       "android"
