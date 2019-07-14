@@ -21,6 +21,8 @@ export interface Answer {
   text: string;
 }
 
+export const DEFAULT_MAX_REVISIONS_PER_SESSION = 10;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +31,7 @@ export class DatabaseService {
 
   private questions = new BehaviorSubject([]);
   private score = new BehaviorSubject(0);
+  private maxRevisionsPerSession = new BehaviorSubject(DEFAULT_MAX_REVISIONS_PER_SESSION);
 
   constructor(private storage: Storage, private http: HttpClient) {
     this.storage.ready().then(async () => {
@@ -39,6 +42,7 @@ export class DatabaseService {
   async initializeDatabase() {
     const storedQuestions = await this.storage.get('questions');
     const storedScore = await this.storage.get('score');
+    const maxRevisionsPerSession = await this.storage.get('maxRevisionsPerSession');
 
     if (storedQuestions === null) {
       this.isReady.next(false);
@@ -51,6 +55,13 @@ export class DatabaseService {
       } else {
         this.score.next(storedScore);
       }
+
+      if (maxRevisionsPerSession === null) {
+        await this.updateMaxRevisionsPerSession(DEFAULT_MAX_REVISIONS_PER_SESSION);
+      } else {
+        this.maxRevisionsPerSession.next(maxRevisionsPerSession);
+      }
+
       this.isReady.next(true);
     }
   }
@@ -66,6 +77,7 @@ export class DatabaseService {
 
       await this.updateQuestions(parsedQuestions);
       await this.updateScore(0);
+      await this.updateMaxRevisionsPerSession(DEFAULT_MAX_REVISIONS_PER_SESSION);
       this.isReady.next(true);
     });
   }
@@ -76,6 +88,10 @@ export class DatabaseService {
 
   getScoreAsObservable(): Observable<number> {
     return this.score.asObservable();
+  }
+
+  getMaxRevisionsPerSessionAsObservable(): Observable<number> {
+    return this.maxRevisionsPerSession.asObservable();
   }
 
   updateQuestions(questions): Promise<void> {
@@ -98,5 +114,11 @@ export class DatabaseService {
 
   addToScore(diff): Promise<void> {
     return this.updateScore(this.score.getValue() + diff);
+  }
+
+  updateMaxRevisionsPerSession(maxRevisionsPerSession): Promise<void> {
+    return this.storage.set('maxRevisionsPerSession', maxRevisionsPerSession).then(() => {
+      this.maxRevisionsPerSession.next(maxRevisionsPerSession);
+    });
   }
 }

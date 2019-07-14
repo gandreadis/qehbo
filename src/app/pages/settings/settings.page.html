@@ -10,7 +10,14 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-button color="danger" expand="block" (click)="removeAllData()">
-    Wis mijn data
-  </ion-button>
+  <h2>Leermethode</h2>
+  <ion-item>
+    <ion-label position="stacked">Maximum aantal vragen per sessie</ion-label>
+    <ion-input type="number" [(ngModel)]="maxRevisions" max="200" min="5" (ionChange)="updateMaxRevisions($event)"></ion-input>
+  </ion-item>
+
+  <h2 padding-top>Data reset</h2>
+    <ion-button color="danger" expand="block" (click)="removeAllData()">
+      Wis mijn data
+    </ion-button>
 </ion-content>

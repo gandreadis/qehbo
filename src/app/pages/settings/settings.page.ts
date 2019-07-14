@@ -8,10 +8,20 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./settings.page.scss'],
 })
 export class SettingsPage implements OnInit {
+  maxRevisions = 0;
 
   constructor(private databaseService: DatabaseService, private alertController: AlertController) { }
 
   ngOnInit() {
+    this.databaseService.isReady.subscribe(ready => {
+      if (ready) {
+        this.databaseService.getMaxRevisionsPerSessionAsObservable().subscribe(newMaxRevisions => this.maxRevisions = newMaxRevisions);
+      }
+    });
+  }
+
+  updateMaxRevisions(event) {
+    this.databaseService.updateMaxRevisionsPerSession(event.target.value);
   }
 
   async removeAllData() {
@@ -29,5 +39,4 @@ export class SettingsPage implements OnInit {
 
     await alert.present();
   }
-
 }

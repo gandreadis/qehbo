@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DatabaseService, Question} from '../../services/database.service';
 import {SpacedRepetitionService} from '../../services/spaced-repetition.service';
-import {MAX_REVISIONS_PER_SESSION} from '../../services/spaced-repetition.service';
 import {SharedModule} from '../../shared/shared.module';
 import {DragulaService} from 'ng2-dragula';
 import {ActivatedRoute} from '@angular/router';
@@ -15,7 +14,7 @@ export class QuestionPage implements OnInit {
   question: Question = null;
   selectedAnswer = -1;
   previousQuestionId = -1;
-  maxRevisions = MAX_REVISIONS_PER_SESSION;
+  maxRevisions = 0;
   endScreen = false;
   submitted = false;
   answerCorrect = false;
@@ -33,6 +32,7 @@ export class QuestionPage implements OnInit {
       moves: () => !this.submitted
     });
     databaseService.getScoreAsObservable().subscribe(newScore => this.score = newScore);
+    databaseService.getMaxRevisionsPerSessionAsObservable().subscribe(newMaxRevisions => this.maxRevisions = newMaxRevisions);
   }
 
   ngOnInit() {
