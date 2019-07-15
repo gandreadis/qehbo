@@ -1,33 +1,90 @@
 ---
-- id: 1
-  type: multiple-choice
+- type: order
   category: procedure
-  text: 1 + 1 = 2
+  text: Wat is de juiste volgorde van acties bij het verlenen van eerste hulp?
   answers:
-    - True
-    - False
-  correctAnswerIndex: 0
-  preserveAnswerOrder: true
+    - Het gevaar voor de hulpverlener inschatten
+    - Het gevaar voor het slachtoffer inschatten
+    - Het bewustzijn controleren
+    - De ademhaling controleren
 
-- id: 2
-  type: order
+- type: multiple-choice
   category: procedure
-  text: What's the correct order?
+  text: Wanneer je eigen veiligheid als hulpverlener niet kan worden gegarandeerd, ...
   answers:
-    - 1. first
-    - 2. second
-    - 3. third
+    - Houd je afstand en bel je 112
+    - Bel je 112, beschrijf je de situatie en verleen je alsnog eerste hulp
+    - Breng je het slachtoffer naar een veilige locatie
 
-- id: 3
-  type: multiple-choice
+- type: multiple-choice
+  category: procedure
+  text: Bij bewusteloosheid ...
+  answers:
+    - Bel je eerst 112 en laat je een AED halen
+    - Controleer je eerst de ademhaling
+    - Reanimeer je direct
+
+- type: multiple-choice
+  category: procedure
+  text: Als het slachtoffer bewusteloos op zijn rug ligt en moet braken, ...
+  answers:
+    - Draai je het hele lichaam van het slachtoffer snel op zij
+    - Draai je de hoofd van het slachtoffer snel op zij
+    - Breng je het slachtoffer met de rautek greep in zittende positie
+
+- type: multiple-choice
+  category: procedure
+  text: Wanneer een bewusteloos slachtoffer een normale ademhaling heeft, ...
+  answers:
+    - Leg je het in de stabiele zijligging, behalve bij een ernstig ongeval
+    - Laat je het slachtoffer altijd op de rug liggen, om verder letsel te voorkomen
+    - Draai je het hoofd van het slachtoffer op zij
+
+- type: multiple-choice
+  category: procedure
+  text: Wanneer er aanwijzingen op een ernstig ongeval zijn, maar het bewustelose slachtoffer wel een normale ademhaling heeft, ...
+  answers:
+    - Laat je het slachtoffer op de rug liggen en houd je de kinlift aan
+    - Leg je het slachtoffer in de stabiele zijligging
+    - Ga je achter het slachtoffer liggen en zijn hoofd vasthouden in de positie waarin je hem hebt aangetroffen
+
+- type: multiple-choice
+  category: procedure
+  text: Als een slachtoffer mogelijk wervelletsel heeft maar wel bij bewustzijn is, ...
+  answers:
+    - Probeer je ervoor te zorgen dat het slachtoffer zich niet beweegt, maar hou je ongecontroleerde bewegingen niet tegen
+    - Zorg je ervoor dat het slachtoffer zich niet beweegt, door ongecontroleerde bewegingen tegen te houden
+    - Laat je het slachtoffer de houding zelf bepalen en zich vrij bewegen
+
+- type: multiple-choice
+  category: procedure
+  text: Bij benauwdheid laat je een slachtoffer ...
+  answers:
+    - Niet plat liggen
+    - Niet zitten
+    - Opstaan
+
+- type: multiple-choice
+  category: procedure
+  text: Bij hevig bloedverlies ...
+  answers:
+    - Oefen je meteen druk uit op de wond
+    - Zoek je een verband en verbind je de wond
+    - Laat je het slachtoffer plat liggen
+
+- type: true-false
+  category: procedure
+  text: Als een slachtoffer bij bewustzijn is, hoef je niet meer de ademhaling te controleren.
+  isTrue: false
+
+- type: multiple-choice
   category: reanimatie
   text: 1 + 1 = 3
   answers:
-    - True
     - False
+    - True
     - sth.else
     - sth.else
     - sth.else
     - sth.else
     - sth.else
-  correctAnswerIndex: 1

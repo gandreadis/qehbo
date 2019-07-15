@@ -9,6 +9,8 @@ import { AlertController } from '@ionic/angular';
 })
 export class SettingsPage implements OnInit {
   maxRevisions = 0;
+  maxRevisionsMinValue = 5;
+  maxRevisionsMaxValue = 200;
 
   constructor(private databaseService: DatabaseService, private alertController: AlertController) { }
 
@@ -21,7 +23,9 @@ export class SettingsPage implements OnInit {
   }
 
   updateMaxRevisions(event) {
-    this.databaseService.updateMaxRevisionsPerSession(event.target.value);
+    let value = event.target.value > this.maxRevisionsMaxValue ? this.maxRevisionsMaxValue : event.target.value;
+    value = value < this.maxRevisionsMinValue ? this.maxRevisionsMinValue : value;
+    this.databaseService.updateMaxRevisionsPerSession(value);
   }
 
   async removeAllData() {

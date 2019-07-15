@@ -39,6 +39,7 @@ export class QuestionPage implements OnInit {
     this.databaseService.isReady.subscribe(ready => {
       if (ready) {
         this.route.paramMap.subscribe(params => {
+          this.endScreen = false;
           this.category = params.get('id');
           this.spacedRepetitionService.resetSession();
           this.nextQuestion();
@@ -47,11 +48,20 @@ export class QuestionPage implements OnInit {
     });
   }
 
-  async selectAnswer(index) {
+  async selectMultipleChoiceAnswer(index) {
     if (this.selectedAnswer !== -1) {
       return;
     }
     this.answerCorrect = await this.spacedRepetitionService.processMultipleChoiceQuestionAnswered(this.question.id, index);
+    this.selectedAnswer = index;
+    this.submitted = true;
+  }
+
+  async selectTrueFalseAnswer(index) {
+    if (this.selectedAnswer !== -1) {
+      return;
+    }
+    this.answerCorrect = await this.spacedRepetitionService.processTrueFalseQuestionAnswered(this.question.id, index);
     this.selectedAnswer = index;
     this.submitted = true;
   }

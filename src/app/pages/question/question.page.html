@@ -26,15 +26,32 @@
       <div *ngIf="question.type === 'multiple-choice'" padding>
         <ion-button
           fill="{{answer.id === selectedAnswer ? 'solid' : 'outline'}}"
-          color="{{submitted ? (answer.id === question.correctAnswerIndex ? 'success' : (answer.id !== selectedAnswer ? 'medium' : 'danger')) : 'primary'}}"
+          color="{{submitted ? (answer.id === 0 ? 'success' : (answer.id !== selectedAnswer ? 'medium' : 'danger')) : 'primary'}}"
           expand="block"
+          text-wrap
+          style="height: auto"
           *ngFor="let answer of question.answers"
-          (click)="selectAnswer(answer.id)"
+          (click)="selectMultipleChoiceAnswer(answer.id)"
         >
-          {{answer.text}}
+          <span padding>{{answer.text}}</span>
         </ion-button>
       </div>
 
+      <div *ngIf="question.type === 'true-false'" padding>
+        <ion-row>
+          <ion-col *ngFor="let answer of question.answers">
+            <ion-button
+              fill="{{answer.id === selectedAnswer ? 'solid' : 'outline'}}"
+              color="{{submitted ? (answer.id === (question.isTrue ? 0 : 1) ? 'success' : (answer.id !== selectedAnswer ? 'medium' : 'danger')) : 'primary'}}"
+              expand="block"
+              size="large"
+              (click)="selectTrueFalseAnswer(answer.id)"
+            >
+              {{answer.text}}
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
 
       <div *ngIf="question.type === 'order'" padding>
         <ion-list dragula="ANSWERS" [(dragulaModel)]="question.answers">
@@ -42,9 +59,11 @@
             fill="{{submitted ? 'solid' : 'outline'}}"
             color="{{submitted ? 'medium' : 'primary'}}"
             expand="block"
+            text-wrap
+            style="height: auto"
             *ngFor="let answer of question.answers"
           >
-            {{ answer.text }}
+            <span padding>{{answer.text}}</span>
           </ion-button>
         </ion-list>
 

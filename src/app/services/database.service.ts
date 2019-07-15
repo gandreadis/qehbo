@@ -10,7 +10,7 @@ export interface Question {
   category: string;
   text: string;
   answers: Answer[];
-  correctAnswerIndex?: number;
+  isTrue: boolean;
   preserveAnswerOrder?: boolean;
   box?: number;
   lastVisitDateTime?: string;
@@ -69,9 +69,20 @@ export class DatabaseService {
   async resetDatabase() {
     this.http.get('assets/questions.yml', {responseType: 'text'}).subscribe(async yml => {
       const parsedQuestions = yaml.parse(yml);
-      parsedQuestions.forEach(question => {
+      parsedQuestions.forEach((question, index) => {
+        question.id = index;
+
         if (question.hasOwnProperty('answers')) {
-          question.answers = question.answers.map((text, index) => ({ text, id: index}));
+          question.answers = question.answers.map((text, id) => ({ text, id }));
+        }
+
+        if (question.type === 'true-false') {
+          question.answers = [
+            { id: 0, text: 'Waar' },
+            { id: 1, text: 'Fout' },
+          ];
+          question.preserveAnswerOrder = true;
+          question.isTrue = (question.isTrue === 'true');
         }
       });
 
