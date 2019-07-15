@@ -10,7 +10,7 @@ export interface Question {
   category: string;
   text: string;
   answers: Answer[];
-  isTrue: boolean;
+  isTrue?: boolean;
   preserveAnswerOrder?: boolean;
   box?: number;
   lastVisitDateTime?: string;
