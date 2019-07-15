@@ -77,6 +77,21 @@
   text: Als een slachtoffer bij bewustzijn is, hoef je niet meer de ademhaling te controleren.
   isTrue: false
 
+- type: true-false
+  category: procedure
+  text: Bij hevig bloedverlies of shock moet een slachtoffer liggen.
+  isTrue: true
+
+- type: multiple-choice
+  category: 112
+  text: Je slachtoffer heeft een been gebroken. 112 bellen?
+  answers:
+    - Ja, altijd.
+    - Ja, maar alleen als het een open breuk is.
+    - Nee.
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
 - type: multiple-choice
   category: reanimatie
   text: 1 + 1 = 3

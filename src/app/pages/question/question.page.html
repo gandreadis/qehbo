@@ -26,7 +26,7 @@
       <div *ngIf="question.type === 'multiple-choice'" padding>
         <ion-button
           fill="{{answer.id === selectedAnswer ? 'solid' : 'outline'}}"
-          color="{{submitted ? (answer.id === 0 ? 'success' : (answer.id !== selectedAnswer ? 'medium' : 'danger')) : 'primary'}}"
+          color="{{submitted ? (answer.id === question.correctAnswerIndex ? 'success' : (answer.id !== selectedAnswer ? 'medium' : 'danger')) : 'primary'}}"
           expand="block"
           text-wrap
           style="height: auto"

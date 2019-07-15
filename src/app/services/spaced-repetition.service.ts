@@ -63,7 +63,7 @@ export class SpacedRepetitionService {
 
   processMultipleChoiceQuestionAnswered(id: number, givenAnswerIndex): Promise<boolean> {
     const question = this.databaseService.getCurrentQuestions().find(q => q.id === id);
-    return this.processQuestionAnswered(question, givenAnswerIndex === 0);
+    return this.processQuestionAnswered(question, givenAnswerIndex === question.correctAnswerIndex);
   }
 
   processTrueFalseQuestionAnswered(id: number, givenAnswerIndex): Promise<boolean> {

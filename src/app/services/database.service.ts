@@ -11,6 +11,7 @@ export interface Question {
   text: string;
   answers: Answer[];
   isTrue?: boolean;
+  correctAnswerIndex?: boolean;
   preserveAnswerOrder?: boolean;
   box?: number;
   lastVisitDateTime?: string;
@@ -76,13 +77,16 @@ export class DatabaseService {
           question.answers = question.answers.map((text, id) => ({ text, id }));
         }
 
+        if (!question.hasOwnProperty('correctAnswerIndex') && question.type === 'multiple-choice') {
+          question.correctAnswerIndex = 0;
+        }
+
         if (question.type === 'true-false') {
           question.answers = [
             { id: 0, text: 'Waar' },
             { id: 1, text: 'Fout' },
           ];
           question.preserveAnswerOrder = true;
-          question.isTrue = (question.isTrue === 'true');
         }
       });
 
