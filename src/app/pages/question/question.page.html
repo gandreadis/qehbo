@@ -29,7 +29,7 @@
           color="{{submitted ? (answer.id === question.correctAnswerIndex ? 'success' : (answer.id !== selectedAnswer ? 'medium' : 'danger')) : 'primary'}}"
           expand="block"
           text-wrap
-          style="height: auto"
+          class="answer-button"
           *ngFor="let answer of question.answers"
           (click)="selectMultipleChoiceAnswer(answer.id)"
         >
@@ -60,7 +60,7 @@
             color="{{submitted ? 'medium' : 'primary'}}"
             expand="block"
             text-wrap
-            style="height: auto"
+            class="answer-button"
             *ngFor="let answer of question.answers"
           >
             <span padding>{{answer.text}}</span>

@@ -1,6 +1,6 @@
 ---
 - type: order
-  category: procedure
+  category: levensbedreigende-letsels
   text: Wat is de juiste volgorde van acties bij het verlenen van eerste hulp?
   answers:
     - Het gevaar voor de hulpverlener inschatten
@@ -9,7 +9,7 @@
     - De ademhaling controleren
 
 - type: multiple-choice
-  category: procedure
+  category: levensbedreigende-letsels
   text: Wanneer je eigen veiligheid als hulpverlener niet kan worden gegarandeerd, ...
   answers:
     - Houd je afstand en bel je 112
@@ -17,7 +17,7 @@
     - Breng je het slachtoffer naar een veilige locatie
 
 - type: multiple-choice
-  category: procedure
+  category: levensbedreigende-letsels
   text: Bij bewusteloosheid ...
   answers:
     - Bel je eerst 112 en laat je een AED halen
@@ -25,7 +25,7 @@
     - Reanimeer je direct
 
 - type: multiple-choice
-  category: procedure
+  category: levensbedreigende-letsels
   text: Als het slachtoffer bewusteloos op zijn rug ligt en moet braken, ...
   answers:
     - Draai je het hele lichaam van het slachtoffer snel op zij
@@ -33,7 +33,7 @@
     - Breng je het slachtoffer met de rautek greep in zittende positie
 
 - type: multiple-choice
-  category: procedure
+  category: levensbedreigende-letsels
   text: Wanneer een bewusteloos slachtoffer een normale ademhaling heeft, ...
   answers:
     - Leg je het in de stabiele zijligging, behalve bij een ernstig ongeval
@@ -41,7 +41,7 @@
     - Draai je het hoofd van het slachtoffer op zij
 
 - type: multiple-choice
-  category: procedure
+  category: levensbedreigende-letsels
   text: Wanneer er aanwijzingen op een ernstig ongeval zijn, maar het bewustelose slachtoffer wel een normale ademhaling heeft, ...
   answers:
     - Laat je het slachtoffer op de rug liggen en houd je de kinlift aan
@@ -49,7 +49,7 @@
     - Ga je achter het slachtoffer liggen en zijn hoofd vasthouden in de positie waarin je hem hebt aangetroffen
 
 - type: multiple-choice
-  category: procedure
+  category: levensbedreigende-letsels
   text: Als een slachtoffer mogelijk wervelletsel heeft maar wel bij bewustzijn is, ...
   answers:
     - Probeer je ervoor te zorgen dat het slachtoffer zich niet beweegt, maar hou je ongecontroleerde bewegingen niet tegen
@@ -57,7 +57,7 @@
     - Laat je het slachtoffer de houding zelf bepalen en zich vrij bewegen
 
 - type: multiple-choice
-  category: procedure
+  category: levensbedreigende-letsels
   text: Bij benauwdheid laat je een slachtoffer ...
   answers:
     - Niet plat liggen
@@ -65,7 +65,7 @@
     - Opstaan
 
 - type: multiple-choice
-  category: procedure
+  category: levensbedreigende-letsels
   text: Bij hevig bloedverlies ...
   answers:
     - Oefen je meteen druk uit op de wond
@@ -73,33 +73,168 @@
     - Laat je het slachtoffer plat liggen
 
 - type: true-false
-  category: procedure
+  category: levensbedreigende-letsels
   text: Als een slachtoffer bij bewustzijn is, hoef je niet meer de ademhaling te controleren.
   isTrue: false
 
 - type: true-false
-  category: procedure
+  category: levensbedreigende-letsels
   text: Bij hevig bloedverlies of shock moet een slachtoffer liggen.
   isTrue: true
 
 - type: multiple-choice
-  category: 112
-  text: Je slachtoffer heeft een been gebroken. 112 bellen?
+  category: levensbedreigende-letsels
+  text: Om assistentie te krijgen bij de hulpverlening moet je in een grotere groep als eerstehulpverlener ...
+  answers:
+    - Het initiatief nemen en iemand direct aanspreken
+    - Wachten todat zich iemand aanbiedt
+    - De groep vragen of er iemand kan helpen
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Om het bewustzijn van een slachtoffer te kunnen beoordelen, ...
+  answers:
+    - Schud je het slachtoffer aan zijn schouders en vraag je 'Gaat het?'
+    - Roep je de naam van het slachtoffer
+    - Sla je het slachtoffer zachtjes op de wang
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Als het slachtoffer bewusteloos is maar wel (onregelmatig) naar lucht schijnt te happen, moet je de reanimatie uitstellen.
+  isTrue: false
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Je moet de AED direct gebruiken zodra die er is.
+  isTrue: true
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Van welke van deze ondergronden hoef je een slachtoffer niet te verplaatsen om te reanimeren?
+  answers:
+    - Voetgangerspad
+    - Rijbaan
+    - Bed
+    - Sofa
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Bij het reanimeren van een volwassen slachtoffer wissel je *** borstcompressies met *** beademingen af.
+  answers:
+    - 30, 2
+    - 15, 2
+    - 30, 5
+    - 15, 5
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: De kinlift bij babys is ...
+  answers:
+    - Anders, namelijk moet het hoofd niet te verder naar achteren gekanteld worden dan dat het gezicht recht naar boven kijkt
+    - Hetzelfde als bij volwassenen, alleen dat een vinger ipv. twee vingers gebruikt wordt
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Nadat de AED een schok toegediend heeft hervat je direct de reanimatie met 30 borstcompressies.
+  isTrue: true
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Bij het reanimeren met twee hulpverleners kan je het beste elke *** minuten afwisselen.
+  answers:
+    - "0:30"
+    - "2:00"
+    - "5:00"
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Wanneer mag je stoppen met reanimeren?
+  answers:
+    - Als je uitgeput bent
+    - Als het slachtoffer bij bewustzijn komt en normaal begint te openen
+    - Een professionele hulpverlener zegt dat je mag stoppen
+    - Alle antwoorden zijn juist
+  preserveAnswerOrder: true
+  correctAnswerIndex: 3
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Bij een reanimatie van een drenkeling ...
+  answers:
+    - Start je de reanimatie met 5 beademingen
+    - Start je de reanimatie met 30 borstcompressies
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Als je een bewusteloze drenkeling moet reanimeren maar niet in de buurt bent van een telefoon, moet je eerst 1 minuut reanimeren voordat je de telefoon haalt.
+  isTrue: true
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Het slachtoffer heeft een been gebroken. 112 bellen?
   answers:
     - Ja, altijd.
-    - Ja, maar alleen als het een open breuk is.
+    - Alleen als het ook een open breuk is.
     - Nee.
   preserveAnswerOrder: true
   correctAnswerIndex: 0
 
 - type: multiple-choice
-  category: reanimatie
-  text: 1 + 1 = 3
+  category: 112-bellen
+  text: Het slachtoffer heeft zijn pols gebroken. 112 bellen?
   answers:
-    - False
-    - True
-    - sth.else
-    - sth.else
-    - sth.else
-    - sth.else
-    - sth.else
+    - Ja, altijd.
+    - Alleen als het ook een open breuk is.
+    - Nee.
+  preserveAnswerOrder: true
+  correctAnswerIndex: 1
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Het slachtoffer heeft een open breuk. 112 bellen?
+  answers:
+    - Ja, altijd.
+    - Alleen als de wond te groot is om af te dekken.
+    - Nee.
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Het slachtoffer heeft zich aan de pan verbrand en daardoor blaren op een vinger. 112 bellen?
+  answers:
+    - Ja, altijd.
+    - Alleen als de vinger niet beweegd kan worden.
+    - Nee.
+  preserveAnswerOrder: true
+  correctAnswerIndex: 2
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Het slachtoffer heeft een 2e graads verbranding over de hele rug. 112 bellen?
+  answers:
+    - Ja, altijd.
+    - Alleen als het slachtoffer bewusteloos is.
+    - Nee.
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Het slachtoffer heeft zich verslikt en kan niet effectief hoesten. 112 bellen?
+  answers:
+    - Ja, altijd.
+    - Alleen als het langer dan 2 minuten duurt.
+    - Nee.
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Je treft een bewusteloos slachtoffer aan. 112 bellen?
+  answers:
+    - Ja, altijd.
+    - Alleen als het slachtoffer voor langer dan 2 minuten bewusteloos is.
+    - Nee.
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0

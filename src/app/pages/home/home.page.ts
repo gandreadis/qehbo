@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {DatabaseService} from '../../services/database.service';
 
 @Component({
   selector: 'app-home',
@@ -8,15 +9,21 @@ import { Component } from '@angular/core';
 export class HomePage {
   categories = [
     {
-      id: 'procedure',
-      title: 'Volgorde van Eerste Hulp',
+      id: 'levensbedreigende-letsels',
+      title: 'Levensbedreigende letsels en ziekten',
     },
     {
-      id: 'reanimatie',
-      title: 'Reanimatie',
+      id: 'overige-letsels',
+      title: 'Overige letsels en ziekten',
+    },
+    {
+      id: '112-bellen',
+      title: '112 - ja of nee?',
     },
   ];
+  score = 0;
 
-  constructor() {}
-
+  constructor(public databaseService: DatabaseService) {
+    databaseService.getScoreAsObservable().subscribe(newScore => this.score = newScore);
+  }
 }
