@@ -170,12 +170,91 @@
   isTrue: true
 
 - type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Bij mogelijk wervelletsel ...
+  answers:
+    - Zeg je tegen het slachtoffer dat hij zich niet moet bewegen en hou je zijn hoofd vast
+    - Zet je eerst het hoofd recht en hou je het daarna vast
+    - Raak je het hoofd niet aan
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Om een slachtoffer dat niet effectief kan hoesten te helpen bij een verslikking ...
+  answers:
+    - Bel je 112 en geef je vervolgens 5 rugslagen afgewisseld met 5 buikstoten
+    - Moedig je aan tot hoesten
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Als een slachtoffer bij bewustzijn is maar rook, gas of chemische stoffen heeft ingeademd ...
+  answers:
+    - Laat je het slachtoffer niet plat liggen
+    - Laat je het slachtoffer op zijn rug liggen
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Een benauwd slachtoffer met borstletsel mag geen tegendruk uitoefenen op een pijnlijke plek.
+  isTrue: false
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Bij borstletsel moet je voorwerpen die uit de borst of buik steken verwijderen.
+  isTrue: false
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Bij een astma-aanval moet een slachtoffer vooral niet plat liggen.
+  isTrue: true
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Bij een paniekaanval ...
+  answers:
+    - Kan je het slachtoffer voorovergebogen op een stoel laten zitten
+    - Leg je het slachtoffer op zijn rug
+    - Raad je het slachtoffer aan door de mond te ademen
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Een slachtoffer met shock laat je bij voorkeur ...
+  answers:
+    - Op de rug liggen
+    - Zitten
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Iemand die shock heeft moet je actief opwarmen.
+  isTrue: false
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Iemand die shock heeft moet je niets te drinken of te eten geven.
+  isTrue: true
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Hevige bloedingen aan nek/hals moet je ook zwachtelen.
+  isTrue: false
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Een schedelbasisbreuk kan je herkennen aan ...
+  answers:
+    - Blauwe plekken rond de ogen of achter het oor
+    - Rode plekken rond de ogen of achter het oor
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Bij ongevallen door hoogspanning benader je het slachtoffer niet.
+  isTrue: true
+
+- type: multiple-choice
   category: 112-bellen
   text: Het slachtoffer heeft een been gebroken. 112 bellen?
   answers:
-    - Ja, altijd.
-    - Alleen als het ook een open breuk is.
-    - Nee.
+    - Ja, altijd
+    - Alleen als het ook een open breuk is
+    - Nee
   preserveAnswerOrder: true
   correctAnswerIndex: 0
 
@@ -183,9 +262,9 @@
   category: 112-bellen
   text: Het slachtoffer heeft zijn pols gebroken. 112 bellen?
   answers:
-    - Ja, altijd.
-    - Alleen als het ook een open breuk is.
-    - Nee.
+    - Ja, altijd
+    - Alleen als het ook een open breuk is
+    - Nee
   preserveAnswerOrder: true
   correctAnswerIndex: 1
 
@@ -193,9 +272,9 @@
   category: 112-bellen
   text: Het slachtoffer heeft een open breuk. 112 bellen?
   answers:
-    - Ja, altijd.
-    - Alleen als de wond te groot is om af te dekken.
-    - Nee.
+    - Ja, altijd
+    - Alleen als de wond te groot is om af te dekken
+    - Nee
   preserveAnswerOrder: true
   correctAnswerIndex: 0
 
@@ -203,9 +282,9 @@
   category: 112-bellen
   text: Het slachtoffer heeft zich aan de pan verbrand en daardoor blaren op een vinger. 112 bellen?
   answers:
-    - Ja, altijd.
-    - Alleen als de vinger niet beweegd kan worden.
-    - Nee.
+    - Ja, altijd
+    - Alleen als de vinger niet beweegd kan worden
+    - Nee
   preserveAnswerOrder: true
   correctAnswerIndex: 2
 
@@ -213,9 +292,9 @@
   category: 112-bellen
   text: Het slachtoffer heeft een 2e graads verbranding over de hele rug. 112 bellen?
   answers:
-    - Ja, altijd.
-    - Alleen als het slachtoffer bewusteloos is.
-    - Nee.
+    - Ja, altijd
+    - Alleen als het slachtoffer bewusteloos is
+    - Nee
   preserveAnswerOrder: true
   correctAnswerIndex: 0
 
@@ -223,9 +302,9 @@
   category: 112-bellen
   text: Het slachtoffer heeft zich verslikt en kan niet effectief hoesten. 112 bellen?
   answers:
-    - Ja, altijd.
-    - Alleen als het langer dan 2 minuten duurt.
-    - Nee.
+    - Ja, altijd
+    - Alleen als het langer dan 2 minuten duurt
+    - Nee
   preserveAnswerOrder: true
   correctAnswerIndex: 0
 
@@ -233,8 +312,28 @@
   category: 112-bellen
   text: Je treft een bewusteloos slachtoffer aan. 112 bellen?
   answers:
-    - Ja, altijd.
-    - Alleen als het slachtoffer voor langer dan 2 minuten bewusteloos is.
-    - Nee.
+    - Ja, altijd
+    - Alleen als het slachtoffer voor langer dan 2 minuten bewusteloos is
+    - Nee
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Het slachtoffer heeft rook, hete gassen of chemische stoffen ingeademd. 112 bellen?
+  answers:
+    - Ja, altijd
+    - Alleen als het slachtoffer benauwd is
+    - Nee
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Het slachtoffer heeft hartklachten. 112 bellen?
+  answers:
+    - Ja, altijd
+    - Alleen als de klachten plotseling en heftig beginnen
+    - Nee
   preserveAnswerOrder: true
   correctAnswerIndex: 0
