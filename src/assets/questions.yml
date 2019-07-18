@@ -29,7 +29,7 @@
   text: Als het slachtoffer bewusteloos op zijn rug ligt en moet braken, ...
   answers:
     - Draai je het hele lichaam van het slachtoffer snel op zij
-    - Draai je de hoofd van het slachtoffer snel op zij
+    - Draai je het hoofd van het slachtoffer snel op zij
     - Breng je het slachtoffer met de rautek greep in zittende positie
 
 - type: multiple-choice
@@ -119,7 +119,7 @@
 
 - type: multiple-choice
   category: levensbedreigende-letsels
-  text: Bij het reanimeren van een volwassen slachtoffer wissel je *** borstcompressies met *** beademingen af.
+  text: Bij het reanimeren van een volwassen slachtoffer wissel je ... borstcompressies met ... beademingen af.
   answers:
     - 30, 2
     - 15, 2
@@ -140,7 +140,7 @@
 
 - type: multiple-choice
   category: levensbedreigende-letsels
-  text: Bij het reanimeren met twee hulpverleners kan je het beste elke *** minuten afwisselen.
+  text: Bij het reanimeren met twee hulpverleners kan je het beste elke ... minuten afwisselen.
   answers:
     - "0:30"
     - "2:00"
@@ -248,9 +248,520 @@
   text: Bij ongevallen door hoogspanning benader je het slachtoffer niet.
   isTrue: true
 
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Bij een ernstige onderkoeling rilt of klappertandt een slachtoffer niet meer.
+  isTrue: true
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Bij een hitteberoerte zweet een slachtoffer intensief.
+  isTrue: false
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Bij een hitteberoerte moet je actief het slachtoffer afkoelen, met alle beschikbare middelen.
+  isTrue: true
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Als het slachtoffer een bijtende giftige stof heeft ingeslikt, laat je de mond spoelen met water en uitspugen.
+  isTrue: true
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Bij een grote epileptische aanval kan je het beste de bewegingen van het slachtoffer tegenhouden.
+  isTrue: false
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Koortsstuipen komen voor bij kinderen van ...
+  answers:
+    - 6 maanden tot 5 jaar
+    - 0 tot 6 maanden
+    - 5 jaar tot puberteit
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Een hersenvliesontsteking herken je o.a. aan kleine puntvormige rode vlekjes die je niet kunt wegdrukken.
+  isTrue: true
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Bij een te laag bloedsuikergehalte ...
+  answers:
+    - Voelt het slachtoffer zich licht in het hoofd
+    - Wordt het slachtoffer steeds zwakker en slaperiger
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Welke test kan je toepassen om een beroerte te herkennen?
+  answers:
+    - Mond-Spraak-Arm
+    - Ogen-Hand-Been
+
+- type: multiple-choice
+  category: levensbedreigende-letsels
+  text: Als een slachtoffer na een flauwte weer bijkomt, ...
+  answers:
+    - Laat je hem 10 minuten liggen
+    - Breng je hem meteen in een zittende houding
+    - Vraag je hem of die kan opstaan
+
+- type: true-false
+  category: levensbedreigende-letsels
+  text: Als je zeker weet dat het slachtoffer een flauwte heeft (door de oorzaak te kennen), mag je 2 minuten wachten met 112 bellen.
+  isTrue: true
+
+- type: true-false
+  category: overige-letsels
+  text: Bij een lichte onderkoeling rilt/klappertandt het slachtoffer.
+  isTrue: true
+
+- type: true-false
+  category: overige-letsels
+  text: Bij een lichte onderkoeling mag je geen warme dranken geven.
+  isTrue: false
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Hoe herken je een hittekramp?
+  answers:
+    - Plotselinge pijn in een spier na inspanning
+    - Pijn tijdens de inspanning, bij gebrek aan warming-up
+    - Pijn die geconcentreerd is op een klein plekje
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Hoe herken je een hitte-uitputting?
+  answers:
+    - Iemand is bleek en heeft klamme huid, of heeft rode, droge huid maar begint te zweten zodra hij de inspanning staakt
+    - Iemand zweet niet meer
+    - Iemand heeft spierpijn
+
+- type: true-false
+  category: overige-letsels
+  text: Een slachtoffer met hitte-uitputting moet je iets koels drinken laten.
+  isTrue: true
+
+- type: true-false
+  category: overige-letsels
+  text: Na een beet van een dier bel je direct de huisarts.
+  isTrue: true
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Bij ernstig vervuilde wonden en bijtwonden is er risico op tetanus. Wat doe je als een slachtoffer zo een wond heeft?
+  answers:
+    - Bel direct de huisarts
+    - Bel alleen de huisarts als de tetanus inenting lang geleden of niet gebeurd is
+
+- type: true-false
+  category: overige-letsels
+  text: Blaren moet je openprikken om ze sneller te laten genezen.
+  isTrue: false
+
+- type: order
+  category: overige-letsels
+  text: Wat is de juiste volgorde van acties bij het verbinden van letsels (nadat je gevaren in de omgeving in kaart hebt gebracht)?
+  answers:
+    - Bewustzijn en ademhaling controleren
+    - Het slachtoffer laten liggen bij ernstige letsels
+    - Kledingstukken en sieraden (laten) verwijderen die over het letsel zitten
+    - Stroken kleefpleister knippen
+    - Handschoenen aantrekken
+    - Wonden verbinden
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Iemand met rode, pijnlijke huid zonder blaren heeft een ...
+  answers:
+    - 1e graads brandwond
+    - 2e graads brandwond
+    - 3e graads brandwond
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Iemand met rode, pijnlijke huid met blaren heeft een ...
+  answers:
+    - 1e graads brandwond
+    - 2e graads brandwond
+    - 3e graads brandwond
+  preserveAnswerOrder: true
+  correctAnswerIndex: 1
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Iemand met grauwwitte of zwarte huid heeft een ...
+  answers:
+    - 1e graads brandwond
+    - 2e graads brandwond
+    - 3e graads brandwond
+  preserveAnswerOrder: true
+  correctAnswerIndex: 2
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Een brandwond koel je minstens ... minuten met lauw kraanwater.
+  answers:
+    - 10
+    - 2
+    - 5
+    - 20
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Om een brandwond te koelen richt je de waterstraal ...
+  answers:
+    - Net boven de wond
+    - Op de wond
+    - Net onder de wond
+
+- type: true-false
+  category: overige-letsels
+  text: Kleding die over een brandwond zit verwijder je voor het koelen.
+  isTrue: true
+
+- type: true-false
+  category: overige-letsels
+  text: Brandwonden moet je strak afdekken om druk uit te oefenen op te wond.
+  isTrue: false
+
+- type: true-false
+  category: overige-letsels
+  text: Je legt nooit ijs op brandwonden.
+  isTrue: true
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Koelen van een brandwond is zinvol tot ... uur na het incident.
+  answers:
+    - 3
+    - 1
+    - 12
+
+- type: true-false
+  category: overige-letsels
+  text: Smeer niets op 2e of 3e graads brandwonden.
+  isTrue: true
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Als je alleen bent met een slachtoffer met grote 2e of 3e graads verbrandingen, bel 112 ... het koelen.
+  answers:
+    - tijdens of na
+    - voor
+
+- type: true-false
+  category: overige-letsels
+  text: Giftige poeders spoel je met water van de huid.
+  isTrue: false
+
+- type: true-false
+  category: overige-letsels
+  text: Een slachtoffer met giftige stoffen op de huid laat je onmiddelijk de schoenen uittrekken.
+  isTrue: true
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Hoe lang moet je giftige stoffen van de huid spoelen?
+  answers:
+    - 45
+    - 10
+    - 30
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Hoe lang moet een oog spoelen?
+  answers:
+    - 15
+    - 5
+    - 30
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Wat moet je niet doen tijdens het spoelen van een oog?
+  answers:
+    - Het water in het andere oog laten lopen
+    - Het oog van het slachtoffer open houden
+    - Het slachtoffer laten liggen
+    - Het slachtoffer zijn oog continu laten draaien
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Iemand met een bleek-grijze en pijnlijke huid zonder blaren heeft een ...
+  answers:
+    - 1e graads bevriezing
+    - 2e graads bevriezing
+    - 3e graads bevriezing
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Iemand met een bleek-grijze en pijnlijke huid en blaren heeft een ...
+  answers:
+    - 1e graads bevriezing
+    - 2e graads bevriezing
+    - 3e graads bevriezing
+  preserveAnswerOrder: true
+  correctAnswerIndex: 1
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Iemand met een (na ontdooien) spierwitte en gevoelloze huid heeft een ...
+  answers:
+    - 1e graads bevriezing
+    - 2e graads bevriezing
+    - 3e graads bevriezing
+  preserveAnswerOrder: true
+  correctAnswerIndex: 2
+
+- type: true-false
+  category: overige-letsels
+  text: Als iemand 2e of 3e graads bevriezingen heeft moet je altijd het spoednummer van de huisarts of de huisartsenpost bellen.
+  isTrue: true
+
+- type: true-false
+  category: overige-letsels
+  text: Ook al is er gevaar op opnieuw bevriezen moet je een slachtoffer opwarmen.
+  isTrue: false
+
+- type: true-false
+  category: overige-letsels
+  text: Bevroren lichaamsdelen warm je op met warm water (max. 40 graden Celsius).
+  isTrue: true
+
+- type: true-false
+  category: overige-letsels
+  text: Bevroren lichaamsdelen warm je op door over de bevroren huid te wrijven.
+  isTrue: false
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Bevroren vingers verbind je ...
+  answers:
+    - Apart van elkaar
+    - Samen
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Bij een kneuzing zie je ...
+  answers:
+    - Een blauwe plek en/of zwelling
+    - Een open wond
+    - Een blaar
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Bij een kneuzing of verstuiking ...
+  answers:
+    - Koel je de pijnlijke plek 10-20 minuten lang
+    - Leg je een warm kussen op het lichaamsdeel
+
+- type: true-false
+  category: overige-letsels
+  text: Een coolpack kan je het beste direct (zonder materiaal ertussen) op een kneuzing of verstuiking plaatsen, voor maximaal effect.
+  isTrue: false
+
+- type: true-false
+  category: overige-letsels
+  text: Bij een overduidelijke breuk moet je niet koelen.
+  isTrue: true
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Een spierscheur herken je aan ...
+  answers:
+    - Plotseling felle pijn op een specifiek plek
+    - Pijn in de hele spier
+    - Pijn in een aangrensend gewricht
+
+- type: true-false
+  category: overige-letsels
+  text: Een slachtoffer met een spierscheur laat je stretchen.
+  isTrue: false
+
+- type: true-false
+  category: overige-letsels
+  text: Een slachtoffer met een spierscheur help je door de plek te koelen.
+  isTrue: true
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Bij een gescheurde achillespees ...
+  answers:
+    - Bel je de huisarts
+    - Bel je 112
+    - Wacht je een paar dagen om te kijken of het vanzelf beter wordt
+
+- type: true-false
+  category: overige-letsels
+  text: Bij een ontwrichting probeer je niet het lichaamsdeel in de normale stand terug te brengen.
+  isTrue: true
+
+- type: true-false
+  category: overige-letsels
+  text: Voorwerpen die in het oog zijn doorgedrongen moet je zo snel mogelijk verwijderen.
+  isTrue: false
+
+- type: true-false
+  category: overige-letsels
+  text: Bij letsel aan het oog van iemand die contactlenzen draagt moet je de contactlenzen verwijderen.
+  isTrue: false
+
+- type: true-false
+  category: overige-letsels
+  text: Bij letsel aan het oog mag het slachtoffer niet in het oog wrijven.
+  isTrue: true
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Iemand met oogletsel vervoer je ...
+  answers:
+    - Zittend
+    - Liggend
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Iemand met oorpijn kan je helpen door het oor ...
+  answers:
+    - Op een warm kussen te leggen
+    - Af te koelen met een coolpack
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Bij een bloedneus laat je de persoon ...
+  answers:
+    - Zitten met het hoofd in schrijfhouding
+    - Het hoofd achterover kantelen
+    - Liggen
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Bij een bloedneus laat je de persoon ...
+  answers:
+    - Eerst zijn neus snuiten (tenzij er mogelijk schedelletsel is) en dan de neus dichtknijpen
+    - Zijn neus niet snuiten en direct de neus dichtknijpen
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Een bloedneus stopt meestal binnen ... minuten. Als dat niet het geval is, bel je de huisarts.
+  answers:
+    - 5
+    - 2
+    - 10
+
+- type: true-false
+  category: overige-letsels
+  text: Bij gebitsletsel moet je een loszittende tand eruit halen.
+  isTrue: false
+
+- type: true-false
+  category: overige-letsels
+  text: Bij gebitsletsel zorg je ervoor dat een slachtoffer niet op een loszittende tand bijt.
+  isTrue: true
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Kun je een uitgeslagen tand niet terugplaatsen? Bewaar hem dan in ...
+  answers:
+    - (Half)volle melk
+    - Water
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Heeft iemand een uitgeslagen tand, moet je ...
+  answers:
+    - De tand bij de kroon vastpakken, kort spoelen onder koud stromend water en dan terugplaatsen
+    - De tand oppakken en direct terugplaatsen
+
+- type: true-false
+  category: overige-letsels
+  text: Iemand die in de keel of mond is gestoken door een instect breng je meteen naar het ziekenhuis.
+  isTrue: true
+
+- type: true-false
+  category: overige-letsels
+  text: Wanneer iemand in een vinger met een ring is gestoken, verwijder je eerst de ring.
+  isTrue: true
+
+- type: order
+  category: overige-letsels
+  text: Wat is de juiste volgorde van acties wanneer iemand door een teek is gebeten?
+  answers:
+    - Controleren dat het daadwerkelijk een teek is
+    - De teek met een tang eruit trekken
+    - De teekbeet ontsmetten
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Bij een tekenbeet moet het slachtoffer zijn gezondheid de komende ... in de gaten houden.
+  answers:
+    - 3 maanden
+    - 2 weken
+    - Maand
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Wanneer een teek langer dan ... uur in de huid heeft gezeten moet contact met de huisarts opgenomen worden.
+  answers:
+    - 24
+    - 48
+    - 12
+
+- type: multiple-choice
+  category: overige-letsels
+  text: De netelcellen van kwallen moet je ...
+  answers:
+    - Van de huid trekken of schrapen met een hard plastic voorwerp
+    - Op de huid laten zitten om ergere pijn te voorkomen
+
+- type: true-false
+  category: overige-letsels
+  text: Bij veel pijn na een zeediersteek help je het slachtoffer door het gestoken lichaamsdeel onder heet water (max. 45 graden Celsius) te zetten.
+  isTrue: true
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Bij veel pijn na een zeediersteek zet je het gestoken lichaamsdeel voor minimaal ... minuten onder heet water.
+  answers:
+    - 20
+    - 5
+    - 45
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Welk van de volgende dingen moet je niet doen als iemand brandharen van de eikenprocessierups op de huid heeft?
+  answers:
+    - Op de plaats wrijven waar de haren zitten
+    - Kleren uittrekken waarin de haren zitten
+    - De huid strippen met plakband
+    - De huid koelen
+
+- type: multiple-choice
+  category: overige-letsels
+  text: Bij diarree kan ... helpen.
+  answers:
+    - ORS
+    - Koolzuurhoudende drank
+    - Appelsap
+
 - type: multiple-choice
   category: 112-bellen
   text: Het slachtoffer heeft een been gebroken. 112 bellen?
+  answers:
+    - Ja, altijd
+    - Alleen als het ook een open breuk is
+    - Nee
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Het slachtoffer heeft zijn heup of bekken gebroken. 112 bellen?
   answers:
     - Ja, altijd
     - Alleen als het ook een open breuk is
@@ -334,6 +845,56 @@
   answers:
     - Ja, altijd
     - Alleen als de klachten plotseling en heftig beginnen
+    - Nee
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Het slachtoffer heeft een grote epileptische aanval. 112 bellen?
+  answers:
+    - Ja, altijd
+    - Alleen als het de eerste aanval van het slachtoffer is
+    - Nee
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Een slachtoffer valt tijdens het sporten flauw. 112 bellen?
+  answers:
+    - Ja, altijd
+    - Alleen als het langer dan 2 minuten duurt
+    - Nee
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Een slachtoffer van 41 jaar valt flauw. 112 bellen?
+  answers:
+    - Ja, altijd
+    - Alleen als het langer dan 2 minuten duurt
+    - Nee
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Een slachtoffer van 5 jaar valt flauw. 112 bellen?
+  answers:
+    - Ja, altijd
+    - Alleen als de flauwte langer dan 2 minuten duurt
+    - Nee
+  preserveAnswerOrder: true
+  correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Een slachtoffer moet braken en er zit veel bloed in het braaksel. 112 bellen?
+  answers:
+    - Ja, altijd
+    - Alleen als het braken lang aanhoudt
     - Nee
   preserveAnswerOrder: true
   correctAnswerIndex: 0
