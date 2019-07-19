@@ -320,7 +320,7 @@
 
 - type: true-false
   category: overige-letsels
-  text: Bij een lichte onderkoeling mag je geen warme dranken geven.
+  text: Bij een lichte onderkoeling mag je geen warme drank aan het slachtoffer geven.
   isTrue: false
 
 - type: multiple-choice
@@ -363,11 +363,10 @@
 
 - type: order
   category: overige-letsels
-  text: Wat is de juiste volgorde van acties bij het verbinden van letsels (nadat je gevaren in de omgeving in kaart hebt gebracht)?
+  text: Wat is de juiste volgorde van acties bij het verbinden van letsels?
   answers:
     - Bewustzijn en ademhaling controleren
-    - Het slachtoffer laten liggen bij ernstige letsels
-    - Kledingstukken en sieraden (laten) verwijderen die over het letsel zitten
+    - Kleding en sieraden verwijderen
     - Stroken kleefpleister knippen
     - Handschoenen aantrekken
     - Wonden verbinden
@@ -635,7 +634,7 @@
   category: overige-letsels
   text: Bij een bloedneus laat je de persoon ...
   answers:
-    - Zitten met het hoofd in schrijfhouding
+    - Zitten in schrijfhouding
     - Het hoofd achterover kantelen
     - Liggen
 
@@ -661,8 +660,8 @@
 
 - type: true-false
   category: overige-letsels
-  text: Bij gebitsletsel zorg je ervoor dat een slachtoffer niet op een loszittende tand bijt.
-  isTrue: true
+  text: Bij gebitsletsel laat je het slachtoffer direct op een loszittende tand bijten.
+  isTrue: false
 
 - type: multiple-choice
   category: overige-letsels
@@ -680,13 +679,13 @@
 
 - type: true-false
   category: overige-letsels
-  text: Iemand die in de keel of mond is gestoken door een instect breng je meteen naar het ziekenhuis.
+  text: Iemand die door een instect in de keel of mond is gestoken breng je meteen naar het ziekenhuis.
   isTrue: true
 
 - type: true-false
   category: overige-letsels
-  text: Wanneer iemand in een vinger met een ring is gestoken, verwijder je eerst de ring.
-  isTrue: true
+  text: Wanneer iemand in een vinger met een ring is gestoken, verwijder je de ring niet!
+  isTrue: false
 
 - type: order
   category: overige-letsels
@@ -871,7 +870,7 @@
 
 - type: multiple-choice
   category: 112-bellen
-  text: Een slachtoffer van 41 jaar valt flauw. 112 bellen?
+  text: Een slachtoffer van 45 jaar valt flauw. 112 bellen?
   answers:
     - Ja, altijd
     - Alleen als het langer dan 2 minuten duurt

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {DatabaseService} from '../../services/database.service';
+import {SpacedRepetitionService} from '../../services/spaced-repetition.service';
 
 @Component({
   selector: 'app-home',
@@ -21,9 +22,16 @@ export class HomePage {
       title: '112 - ja of nee?',
     },
   ];
+  categoriesAreActive = {};
   score = 0;
 
-  constructor(public databaseService: DatabaseService) {
+  constructor(public databaseService: DatabaseService, public spacedRepetitionService: SpacedRepetitionService) {
+    databaseService.getQuestionsAsObservable().subscribe(() => {
+      this.categoriesAreActive = {};
+      this.categories.forEach(category => {
+        this.categoriesAreActive[category.id] = spacedRepetitionService.getAllQuestionsDueToday(category.id).length > 0;
+      });
+    });
     databaseService.getScoreAsObservable().subscribe(newScore => this.score = newScore);
   }
 }

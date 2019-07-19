@@ -4,7 +4,7 @@ import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'introduction',
     pathMatch: 'full'
   },
   {
@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'question/:id',
     loadChildren: './pages/question/question.module#QuestionPageModule'
+  },
+  {
+    path: 'introduction',
+    loadChildren: './pages/introduction/introduction.module#IntroductionPageModule'
   }
 ];
 

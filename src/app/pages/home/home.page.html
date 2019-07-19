@@ -16,14 +16,24 @@
 </ion-header>
 
 <ion-content padding>
-  <div>TODO: Disclaimer</div>
+  <ion-card color="secondary">
+    <ion-card-header>
+      <ion-card-title style="position: relative">
+        <ion-icon name="information-circle" style="position: absolute; top: 0; right: 0"></ion-icon>
+        Waarschuwing
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Deze app vervangt geen EHBO cursus of cursusmateriaal, en is niet geschikt om tijdens de hulpverlening te raadplegen.
+    </ion-card-content>
+  </ion-card>
 
   <ion-card *ngFor="let category of categories">
     <ion-card-header>
       <ion-card-title>{{category.title}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-button expand="block" [routerLink]="['/question/', category.id]">
+      <ion-button expand="block" [disabled]="!categoriesAreActive[category.id]" [routerLink]="['/question/', category.id]">
         Oefenen
       </ion-button>
     </ion-card-content>

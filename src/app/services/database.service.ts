@@ -33,6 +33,7 @@ export class DatabaseService {
   private questions = new BehaviorSubject([]);
   private score = new BehaviorSubject(0);
   private maxRevisionsPerSession = new BehaviorSubject(DEFAULT_MAX_REVISIONS_PER_SESSION);
+  private showedIntroduction = new BehaviorSubject(false);
 
   constructor(private storage: Storage, private http: HttpClient) {
     this.storage.ready().then(async () => {
@@ -44,6 +45,7 @@ export class DatabaseService {
     const storedQuestions = await this.storage.get('questions');
     const storedScore = await this.storage.get('score');
     const maxRevisionsPerSession = await this.storage.get('maxRevisionsPerSession');
+    const showedIntroduction = await this.storage.get('showedIntroduction');
 
     if (storedQuestions === null) {
       this.isReady.next(false);
@@ -63,11 +65,19 @@ export class DatabaseService {
         this.maxRevisionsPerSession.next(maxRevisionsPerSession);
       }
 
+      if (showedIntroduction === null) {
+        await this.updateShowedIntroduction(false);
+      } else {
+        this.showedIntroduction.next(showedIntroduction);
+      }
+
       this.isReady.next(true);
     }
   }
 
   async resetDatabase() {
+    await this.storage.clear();
+
     this.http.get('assets/questions.yml', {responseType: 'text'}).subscribe(async yml => {
       const parsedQuestions = yaml.parse(yml);
       parsedQuestions.forEach((question, index) => {
@@ -93,6 +103,8 @@ export class DatabaseService {
       await this.updateQuestions(parsedQuestions);
       await this.updateScore(0);
       await this.updateMaxRevisionsPerSession(DEFAULT_MAX_REVISIONS_PER_SESSION);
+      await this.updateShowedIntroduction(false);
+
       this.isReady.next(true);
     });
   }
@@ -101,12 +113,20 @@ export class DatabaseService {
     return this.questions.getValue();
   }
 
+  getQuestionsAsObservable(): Observable<Question[]> {
+    return this.questions.asObservable();
+  }
+
   getScoreAsObservable(): Observable<number> {
     return this.score.asObservable();
   }
 
   getMaxRevisionsPerSessionAsObservable(): Observable<number> {
     return this.maxRevisionsPerSession.asObservable();
+  }
+
+  getShowedIntroductionAsObservable(): Observable<boolean> {
+    return this.showedIntroduction.asObservable();
   }
 
   updateQuestions(questions): Promise<void> {
@@ -134,6 +154,12 @@ export class DatabaseService {
   updateMaxRevisionsPerSession(maxRevisionsPerSession): Promise<void> {
     return this.storage.set('maxRevisionsPerSession', maxRevisionsPerSession).then(() => {
       this.maxRevisionsPerSession.next(maxRevisionsPerSession);
+    });
+  }
+
+  updateShowedIntroduction(showedIntroduction): Promise<void> {
+    return this.storage.set('showedIntroduction', showedIntroduction).then(() => {
+      this.showedIntroduction.next(showedIntroduction);
     });
   }
 }
