@@ -1,0 +1,60 @@
+<ion-content>
+  <div *ngIf="storedValueRead" style="height: 100%">
+    <ion-slides pager="true" [options]="slideOpts" style="height: 100%">
+      <ion-slide class="slide" padding>
+        <ion-card style="height: 100%; color: white" color="tertiary">
+          <ion-card-content class="card-content">
+            <div class="slide-content">
+              <h1 padding-bottom>Welkom!</h1>
+              <span style="font-size: 3em">👋</span>
+              <p padding-vertical>Swipe naar links voor een korte introductie! Of klik op de knop hieronder om direct te beginnen.</p>
+              <ion-button color="light" [routerLink]="'/home'">Skip de introductie</ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="slide" padding>
+        <ion-card style="height: 100%; color: black" color="secondary">
+          <ion-card-content class="card-content">
+            <div class="slide-content">
+              <h1 padding-bottom>Hoe werkt het?</h1>
+              <span style="font-size: 3em"><ion-icon name="list-box"></ion-icon></span>
+              <p>
+                Beantwoord in korte sessies EHBO vragen! Direct na het antwoorden krijg je te zien of je het goed hebt. Vragen die je goed beantwoord komen minimaal een dag later terug. Zo komen ze langzamerhand in je lange-termijn geheugen! Vragen die je fout had kunnen dezelfde dag nog langskomen.
+              </p>
+              <br/>
+              <p>
+                Je kan zoveel sessies per dag sessies starten als je wilt, zolang er nog vragen beschikbaar zijn.
+              </p>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="slide" padding>
+        <ion-card style="height: 100%; color: white" color="primary">
+          <ion-card-content class="card-content">
+            <div class="slide-content">
+              <h1 padding-bottom>Hoe vaak?</h1>
+              <span style="font-size: 3em"><ion-icon name="refresh"></ion-icon></span>
+              <p>
+                Neem je app mee in je dagelijkse of wekelijkse routine voor het grootste leereffect!
+              </p>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="slide" padding>
+        <ion-card style="height: 100%; color: black" color="success">
+          <ion-card-content class="card-content">
+            <div class="slide-content">
+              <h1 padding-bottom>Disclaimer</h1>
+              <span style="font-size: 3em"><ion-icon name="warning"></ion-icon></span>
+              <p padding-vertical>Deze app vervangt geen EHBO cursus of cursusmateriaal, en is niet geschikt om tijdens de hulpverlening te raadplegen.</p>
+              <ion-button color="primary" [routerLink]="'/home'">Start met oefenen</ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>
