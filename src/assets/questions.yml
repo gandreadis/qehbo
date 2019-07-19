@@ -130,7 +130,7 @@
   category: levensbedreigende-letsels
   text: De kinlift bij babys is ...
   answers:
-    - Anders, namelijk moet het hoofd niet te verder naar achteren gekanteld worden dan dat het gezicht recht naar boven kijkt
+    - Anders, want de hoofd mag alleen zo ver naar achteren gekanteld worden totdat het gezicht recht naar boven kijkt
     - Hetzelfde als bij volwassenen, alleen dat een vinger ipv. twee vingers gebruikt wordt
 
 - type: true-false
@@ -142,8 +142,8 @@
   category: levensbedreigende-letsels
   text: Bij het reanimeren met twee hulpverleners kan je het beste elke ... minuten afwisselen.
   answers:
-    - "0:30"
     - "2:00"
+    - "0:30"
     - "5:00"
 
 - type: multiple-choice
@@ -223,12 +223,12 @@
 
 - type: true-false
   category: levensbedreigende-letsels
-  text: Iemand die shock heeft moet je actief opwarmen.
+  text: Een slachtoffer met shock moet je actief opwarmen.
   isTrue: false
 
 - type: true-false
   category: levensbedreigende-letsels
-  text: Iemand die shock heeft moet je niets te drinken of te eten geven.
+  text: Een slachtoffer met shock moet je niets te drinken of te eten geven.
   isTrue: true
 
 - type: true-false
@@ -333,11 +333,11 @@
 
 - type: multiple-choice
   category: overige-letsels
-  text: Hoe herken je een hitte-uitputting?
+  text: Hoe herken je hitte-uitputting?
   answers:
-    - Iemand is bleek en heeft klamme huid, of heeft rode, droge huid maar begint te zweten zodra hij de inspanning staakt
-    - Iemand zweet niet meer
-    - Iemand heeft spierpijn
+    - Het slachtoffer is bleek en heeft klamme huid, of heeft rode, droge huid maar begint te zweten zodra hij de inspanning staakt
+    - Het slachtoffer zweet niet meer
+    - Het slachtoffer heeft spierpijn
 
 - type: true-false
   category: overige-letsels
@@ -367,37 +367,36 @@
   answers:
     - Bewustzijn en ademhaling controleren
     - Kleding en sieraden verwijderen
-    - Stroken kleefpleister knippen
-    - Handschoenen aantrekken
+    - Stroken kleefpleister knippen en handschoenen aantrekken
     - Wonden verbinden
 
 - type: multiple-choice
   category: overige-letsels
-  text: Iemand met rode, pijnlijke huid zonder blaren heeft een ...
+  text: Een slachtoffer met rode, pijnlijke huid zonder blaren heeft een ...
   answers:
-    - 1e graads brandwond
-    - 2e graads brandwond
-    - 3e graads brandwond
+    - 1e graads verbranding
+    - 2e graads verbranding
+    - 3e graads verbranding
   preserveAnswerOrder: true
   correctAnswerIndex: 0
 
 - type: multiple-choice
   category: overige-letsels
-  text: Iemand met rode, pijnlijke huid met blaren heeft een ...
+  text: Een slachtoffer met rode, pijnlijke huid met blaren heeft een ...
   answers:
-    - 1e graads brandwond
-    - 2e graads brandwond
-    - 3e graads brandwond
+    - 1e graads verbranding
+    - 2e graads verbranding
+    - 3e graads verbranding
   preserveAnswerOrder: true
   correctAnswerIndex: 1
 
 - type: multiple-choice
   category: overige-letsels
-  text: Iemand met grauwwitte of zwarte huid heeft een ...
+  text: Een slachtoffer met grauwwitte of zwarte huid heeft een ...
   answers:
-    - 1e graads brandwond
-    - 2e graads brandwond
-    - 3e graads brandwond
+    - 1e graads verbranding
+    - 2e graads verbranding
+    - 3e graads verbranding
   preserveAnswerOrder: true
   correctAnswerIndex: 2
 
@@ -443,7 +442,7 @@
 
 - type: true-false
   category: overige-letsels
-  text: Smeer niets op 2e of 3e graads brandwonden.
+  text: Op 2e of 3e graads brandwonden kan je beter niets smeren.
   isTrue: true
 
 - type: multiple-choice
@@ -473,7 +472,7 @@
 
 - type: multiple-choice
   category: overige-letsels
-  text: Hoe lang moet een oog spoelen?
+  text: Hoe lang moet je een oog spoelen?
   answers:
     - 15
     - 5
@@ -490,7 +489,7 @@
 
 - type: multiple-choice
   category: overige-letsels
-  text: Iemand met een bleek-grijze en pijnlijke huid zonder blaren heeft een ...
+  text: Een slachtoffer met een bleek-grijze en pijnlijke huid zonder blaren heeft een ...
   answers:
     - 1e graads bevriezing
     - 2e graads bevriezing
@@ -500,7 +499,7 @@
 
 - type: multiple-choice
   category: overige-letsels
-  text: Iemand met een bleek-grijze en pijnlijke huid en blaren heeft een ...
+  text: Een slachtoffer met een bleek-grijze en pijnlijke huid en blaren heeft een ...
   answers:
     - 1e graads bevriezing
     - 2e graads bevriezing
@@ -510,7 +509,7 @@
 
 - type: multiple-choice
   category: overige-letsels
-  text: Iemand met een (na ontdooien) spierwitte en gevoelloze huid heeft een ...
+  text: Een slachtoffer met een (na ontdooien) spierwitte en gevoelloze huid heeft een ...
   answers:
     - 1e graads bevriezing
     - 2e graads bevriezing
@@ -520,7 +519,7 @@
 
 - type: true-false
   category: overige-letsels
-  text: Als iemand 2e of 3e graads bevriezingen heeft moet je altijd het spoednummer van de huisarts of de huisartsenpost bellen.
+  text: Als een slachtoffer 2e of 3e graads bevriezingen heeft moet je altijd het spoednummer van de huisarts of de huisartsenpost bellen.
   isTrue: true
 
 - type: true-false
@@ -608,7 +607,7 @@
 
 - type: true-false
   category: overige-letsels
-  text: Bij letsel aan het oog van iemand die contactlenzen draagt moet je de contactlenzen verwijderen.
+  text: Bij letsel aan het oog van een slachtoffer die contactlenzen draagt moet je de contactlenzen eerst verwijderen.
   isTrue: false
 
 - type: true-false
@@ -618,14 +617,14 @@
 
 - type: multiple-choice
   category: overige-letsels
-  text: Iemand met oogletsel vervoer je ...
+  text: Een slachtoffer met oogletsel vervoer je ...
   answers:
     - Zittend
     - Liggend
 
 - type: multiple-choice
   category: overige-letsels
-  text: Iemand met oorpijn kan je helpen door het oor ...
+  text: Een slachtoffer met oorpijn kan je helpen door het oor ...
   answers:
     - Op een warm kussen te leggen
     - Af te koelen met een coolpack
@@ -705,7 +704,7 @@
 
 - type: multiple-choice
   category: overige-letsels
-  text: Wanneer een teek langer dan ... uur in de huid heeft gezeten moet contact met de huisarts opgenomen worden.
+  text: Wanneer een teek langer dan ... uur in de huid heeft gezeten moet contact met de huisarts worden opgenomen.
   answers:
     - 24
     - 48
@@ -735,7 +734,7 @@
   category: overige-letsels
   text: Welk van de volgende dingen moet je niet doen als iemand brandharen van de eikenprocessierups op de huid heeft?
   answers:
-    - Op de plaats wrijven waar de haren zitten
+    - De haren weg wrijven
     - Kleren uittrekken waarin de haren zitten
     - De huid strippen met plakband
     - De huid koelen

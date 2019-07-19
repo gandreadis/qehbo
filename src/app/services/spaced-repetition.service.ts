@@ -16,7 +16,6 @@ const boxToDayDelta = {
 };
 const MAX_BOX = 7;
 export const MAX_REVISIONS_PER_SESSION = 10;
-const POINT_MULTIPLIER = 10;
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +42,24 @@ export class SpacedRepetitionService {
         filteredQuestions.reverse();
       }
       return SharedModule.shuffleAnswersOfQuestion({...filteredQuestions[0]});
+    }
+  }
+
+  getMinimumBoxOfCategory(category: string): number {
+    const min = Math.min.apply(null, this.databaseService.getCurrentQuestions()
+      .filter(question => question.category === category)
+      .map(q => {
+        if (q.box) {
+          return q.box;
+        } else {
+          return 0;
+        }
+      }));
+
+    if (min === Infinity) {
+      return 0;
+    } else {
+      return min;
     }
   }
 
@@ -86,7 +103,6 @@ export class SpacedRepetitionService {
         question.box = 1;
       }
 
-      this.databaseService.addToScore(question.box * POINT_MULTIPLIER);
       question.box += question.box === MAX_BOX ? 0 : 1;
     } else {
       question.box = 0;

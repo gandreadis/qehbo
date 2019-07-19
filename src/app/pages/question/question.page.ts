@@ -18,7 +18,6 @@ export class QuestionPage implements OnInit {
   endScreen = false;
   submitted = false;
   answerCorrect = false;
-  score = 0;
   category = null;
 
   constructor(
@@ -31,7 +30,6 @@ export class QuestionPage implements OnInit {
     dragulaService.createGroup('ANSWERS', {
       moves: () => !this.submitted
     });
-    databaseService.getScoreAsObservable().subscribe(newScore => this.score = newScore);
     databaseService.getMaxRevisionsPerSessionAsObservable().subscribe(newMaxRevisions => this.maxRevisions = newMaxRevisions);
   }
 

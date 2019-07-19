@@ -31,7 +31,6 @@ export class DatabaseService {
   public isReady = new BehaviorSubject(false);
 
   private questions = new BehaviorSubject([]);
-  private score = new BehaviorSubject(0);
   private maxRevisionsPerSession = new BehaviorSubject(DEFAULT_MAX_REVISIONS_PER_SESSION);
   private showedIntroduction = new BehaviorSubject(false);
 
@@ -43,7 +42,6 @@ export class DatabaseService {
 
   async initializeDatabase() {
     const storedQuestions = await this.storage.get('questions');
-    const storedScore = await this.storage.get('score');
     const maxRevisionsPerSession = await this.storage.get('maxRevisionsPerSession');
     const showedIntroduction = await this.storage.get('showedIntroduction');
 
@@ -52,12 +50,6 @@ export class DatabaseService {
       this.resetDatabase();
     } else {
       this.questions.next(storedQuestions);
-
-      if (storedScore === null) {
-        await this.updateScore(0);
-      } else {
-        this.score.next(storedScore);
-      }
 
       if (maxRevisionsPerSession === null) {
         await this.updateMaxRevisionsPerSession(DEFAULT_MAX_REVISIONS_PER_SESSION);
@@ -101,7 +93,6 @@ export class DatabaseService {
       });
 
       await this.updateQuestions(parsedQuestions);
-      await this.updateScore(0);
       await this.updateMaxRevisionsPerSession(DEFAULT_MAX_REVISIONS_PER_SESSION);
       await this.updateShowedIntroduction(false);
 
@@ -115,10 +106,6 @@ export class DatabaseService {
 
   getQuestionsAsObservable(): Observable<Question[]> {
     return this.questions.asObservable();
-  }
-
-  getScoreAsObservable(): Observable<number> {
-    return this.score.asObservable();
   }
 
   getMaxRevisionsPerSessionAsObservable(): Observable<number> {
@@ -139,16 +126,6 @@ export class DatabaseService {
     const otherQuestions = this.questions.getValue().filter(q => q.id !== question.id);
     const allQuestions = [question, ...otherQuestions];
     return this.updateQuestions(allQuestions);
-  }
-
-  updateScore(score): Promise<void> {
-    return this.storage.set('score', score).then(() => {
-      this.score.next(score);
-    });
-  }
-
-  addToScore(diff): Promise<void> {
-    return this.updateScore(this.score.getValue() + diff);
   }
 
   updateMaxRevisionsPerSession(maxRevisionsPerSession): Promise<void> {

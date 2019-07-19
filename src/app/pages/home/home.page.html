@@ -6,12 +6,6 @@
     <ion-title>
       qehbo
     </ion-title>
-    <ion-buttons slot="end" padding-end>
-      <ion-chip margin-end>
-        {{score}}
-      </ion-chip>
-      <ion-label>punten</ion-label>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -30,7 +24,10 @@
 
   <ion-card *ngFor="let category of categories">
     <ion-card-header>
-      <ion-card-title>{{category.title}}</ion-card-title>
+      <ion-card-title style="position: relative; padding-right: 70px">
+        <span>{{category.title}}</span>
+        <app-box-stars [category]="category.id" float-end style="position: absolute; top: 2px; right: 0;"></app-box-stars>
+      </ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-button expand="block" [disabled]="!categoriesAreActive[category.id]" [routerLink]="['/question/', category.id]">

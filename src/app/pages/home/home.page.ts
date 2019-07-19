@@ -23,7 +23,6 @@ export class HomePage {
     },
   ];
   categoriesAreActive = {};
-  score = 0;
 
   constructor(public databaseService: DatabaseService, public spacedRepetitionService: SpacedRepetitionService) {
     databaseService.getQuestionsAsObservable().subscribe(() => {
@@ -32,6 +31,5 @@ export class HomePage {
         this.categoriesAreActive[category.id] = spacedRepetitionService.getAllQuestionsDueToday(category.id).length > 0;
       });
     });
-    databaseService.getScoreAsObservable().subscribe(newScore => this.score = newScore);
   }
 }
