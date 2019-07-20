@@ -270,6 +270,12 @@
   dependencies:
     "@types/cordova" latest
 
+"@ionic-native/screen-orientation@^5.10.0":
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/screen-orientation/-/screen-orientation-5.10.0.tgz#810ece686f4802d224259e358c7c06b1bd7d1ab7"
+  dependencies:
+    "@types/cordova" latest
+
 "@ionic-native/status-bar@^5.0.0":
   version "5.10.0"
   resolved "https://registry.yarnpkg.com/@ionic-native/status-bar/-/status-bar-5.10.0.tgz#5ccfa3f083b09bf8e707a7bedad19191ddde460f"
@@ -1680,6 +1686,10 @@ cordova-plugin-ionic-webview@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/cordova-plugin-ionic-webview/-/cordova-plugin-ionic-webview-4.1.1.tgz#7bdfbfaa498f6bd0f92db4cb51ce0c486ac07233"
 
+cordova-plugin-screen-orientation@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/cordova-plugin-screen-orientation/-/cordova-plugin-screen-orientation-3.0.2.tgz#81290a933cfe84d35482cfcb251c931cc7b71931"
+
 cordova-plugin-statusbar@^2.4.2:
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.3.tgz#cc557aef66c27484e0f7f045004040d03321f82d"
@@ -2222,6 +2232,10 @@ es-to-primitive@^1.2.0:
     is-callable "^1.1.4"
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
+
+es6-promise-plugin@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/es6-promise-plugin/-/es6-promise-plugin-4.2.2.tgz#cfa0cc1383d91f999a62a2bbf4bd97bec305e0ac"
 
 es6-promise@^4.0.3:
   version "4.2.8"

@@ -31,7 +31,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-button expand="block" [disabled]="!categoriesAreActive[category.id]" [routerLink]="['/question/', category.id]">
-        Oefenen
+        {{categoriesAreActive[category.id] ? 'Oefenen' : 'Geen vragen beschikbaar'}}
       </ion-button>
     </ion-card-content>
   </ion-card>

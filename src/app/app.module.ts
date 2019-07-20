@@ -5,6 +5,7 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +25,7 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   providers: [
     StatusBar,
+    ScreenOrientation,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
   ],
   exports: [

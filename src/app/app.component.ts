@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 declare var window: any;
 
@@ -31,14 +32,19 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private statusBar: StatusBar,
+    private screenOrientation: ScreenOrientation,
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
-    this.platform.ready().then(() => {
+    this.platform.ready().then(async () => {
       this.statusBar.styleDefault();
       this.statusBar.overlaysWebView(true);
+
+      try {
+        await this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      } catch (e) {}
 
       if (window.AndroidNotch) {
         const style = document.documentElement.style;

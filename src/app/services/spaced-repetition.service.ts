@@ -15,7 +15,6 @@ const boxToDayDelta = {
   7: 90,
 };
 const MAX_BOX = 7;
-export const MAX_REVISIONS_PER_SESSION = 10;
 
 @Injectable({
   providedIn: 'root'
@@ -33,8 +32,9 @@ export class SpacedRepetitionService {
   getNextQuestionDueToday(category: string, lastQuestionId: number): Question {
     const filteredQuestions = this.getAllQuestionsDueToday(category);
 
-    if (filteredQuestions.length === 0 || this.numRevisionsInCurrentSession.getValue() + 1 === MAX_REVISIONS_PER_SESSION) {
-      this.numRevisionsInCurrentSession.next(MAX_REVISIONS_PER_SESSION);
+    if (filteredQuestions.length === 0
+      || this.numRevisionsInCurrentSession.getValue() >= this.databaseService.getMaxRevisionsPerSessionAsValue()) {
+      this.numRevisionsInCurrentSession.next(this.databaseService.getMaxRevisionsPerSessionAsValue());
       return null;
     } else {
       SharedModule.shuffleArray(filteredQuestions);

@@ -112,6 +112,10 @@ export class DatabaseService {
     return this.maxRevisionsPerSession.asObservable();
   }
 
+  getMaxRevisionsPerSessionAsValue(): number {
+    return this.maxRevisionsPerSession.getValue();
+  }
+
   getShowedIntroductionAsObservable(): Observable<boolean> {
     return this.showedIntroduction.asObservable();
   }
