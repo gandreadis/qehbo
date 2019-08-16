@@ -1,6 +1,11 @@
-# qehbo
-
-Dutch mobile app for training your first aid knowledge, using spaced-repetition learning with quizzes.
+<h1 align="center">
+    <img src="resources/icon.png" width="100" alt="qEHBO">
+    <br>
+    qEHBO
+</h1>
+<p align="center">
+    Dutch mobile app for training your first aid knowledge, using spaced-repetition learning with quizzes
+</p>
 
 _Dutch description:_ Oefen je EHBO kennis, op je mobieltje! Ben je aan het leren voor een EHBO examen, of gewoon je kennis aan het opvrissen? Toets en oefen je kennis doelgericht met deze app, in korte sessies. Vragen die jij lastig vindt worden automatisch vaker gesteld, net zo lang totdat je ze beheerst!
 

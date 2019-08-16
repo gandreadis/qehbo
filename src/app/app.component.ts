@@ -13,7 +13,7 @@ declare var window: any;
 export class AppComponent {
   public appPages = [
     {
-      title: 'qehbo',
+      title: 'qEHBO',
       url: '/home',
       icon: 'home'
     },
