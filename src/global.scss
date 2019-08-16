@@ -9,3 +9,12 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+.ion-color-qehbo {
+  --ion-color-base: var(--ion-color-qehbo) !important;
+  --ion-color-base-rgb: var(--ion-color-qehbo-rgb) !important;
+  --ion-color-contrast: var(--ion-color-qehbo-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-qehbo-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-qehbo-shade) !important;
+  --ion-color-tint: var(--ion-color-qehbo-tint) !important;
+}

@@ -135,7 +135,7 @@
 
 - type: true-false
   category: levensbedreigende-letsels
-  text: Nadat de AED een schok toegediend heeft hervat je direct de reanimatie met 30 borstcompressies.
+  text: Nadat de AED een schok toegediend heeft, hervat je direct de reanimatie met 30 borstcompressies.
   isTrue: true
 
 - type: multiple-choice
