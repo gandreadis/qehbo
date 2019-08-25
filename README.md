@@ -3,6 +3,9 @@
     <br>
     qEHBO
 </h1>
+
+<a href='https://play.google.com/store/apps/details?id=com.gandreadis.qehbo&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="140"/></a>
+
 <p align="center">
     Dutch mobile app for training your first aid knowledge, using spaced-repetition learning with quizzes
 </p>
@@ -21,7 +24,7 @@ If you discover any security-related issues, please email security@gandreadis.co
 
 ## Credits
 - [Georgios Andreadis](https://github.com/gandreadis) (project lead)
-- Konstantinos Andreadis (app icon)
+- Konstantinos Andreadis (app icon design)
 - [All contributors](../../contributors)
 
 ## License

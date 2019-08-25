@@ -17,7 +17,6 @@ export class IntroductionPage implements OnInit, OnDestroy {
   constructor(public databaseService: DatabaseService, public router: Router) { }
 
   ngOnInit() {
-    this.storedValueRead = true;
     this.databaseService.isReady.subscribe(ready => {
       if (ready) {
         this.observableSubscription = this.databaseService.getShowedIntroductionAsObservable().subscribe(showed => {
