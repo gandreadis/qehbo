@@ -241,7 +241,7 @@
   text: Een schedelbasisbreuk kan je herkennen aan ...
   answers:
     - Blauwe plekken rond de ogen of achter het oor
-    - Rode plekken rond de ogen of achter het oor
+    - Gele plekken rond de ogen of achter het oor
 
 - type: true-false
   category: levensbedreigende-letsels
@@ -678,7 +678,7 @@
 
 - type: true-false
   category: overige-letsels
-  text: Iemand die door een instect in de keel of mond is gestoken breng je meteen naar het ziekenhuis.
+  text: Iemand die door een insect in de keel of mond is gestoken breng je meteen naar het ziekenhuis.
   isTrue: true
 
 - type: true-false
@@ -756,6 +756,16 @@
     - Nee
   preserveAnswerOrder: true
   correctAnswerIndex: 0
+
+- type: multiple-choice
+  category: 112-bellen
+  text: Het slachtoffer heeft een enkel gekneusd. 112 bellen?
+  answers:
+    - Ja, altijd
+    - Alleen als hij niet kan lopen
+    - Nee
+  preserveAnswerOrder: true
+  correctAnswerIndex: 2
 
 - type: multiple-choice
   category: 112-bellen
@@ -869,13 +879,13 @@
 
 - type: multiple-choice
   category: 112-bellen
-  text: Een slachtoffer van 45 jaar valt flauw. 112 bellen?
+  text: Een slachtoffer van 30 jaar valt flauw. 112 bellen?
   answers:
     - Ja, altijd
     - Alleen als het langer dan 2 minuten duurt
     - Nee
   preserveAnswerOrder: true
-  correctAnswerIndex: 0
+  correctAnswerIndex: 1
 
 - type: multiple-choice
   category: 112-bellen

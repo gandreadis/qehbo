@@ -13,15 +13,16 @@ export class BoxStarsComponent implements OnInit {
   numBoxes = 0;
 
   constructor(public spacedRepetitionService: SpacedRepetitionService, public databaseService: DatabaseService) {
+  }
+
+  ngOnInit() {
     this.databaseService.isReady.subscribe(ready => {
       if (ready) {
+        this.numBoxes = this.spacedRepetitionService.getMinimumBoxOfCategory(this.category);
         this.databaseService.getQuestionsAsObservable().subscribe(() => {
           this.numBoxes = this.spacedRepetitionService.getMinimumBoxOfCategory(this.category);
         });
       }
     });
   }
-
-  ngOnInit() {}
-
 }
