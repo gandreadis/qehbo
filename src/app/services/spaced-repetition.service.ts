@@ -101,9 +101,9 @@ export class SpacedRepetitionService {
     if (correctly) {
       if (!question.box) {
         question.box = 1;
+      } else {
+        question.box += question.box === MAX_BOX ? 0 : 1;
       }
-
-      question.box += question.box === MAX_BOX ? 0 : 1;
     } else {
       question.box = 0;
     }
